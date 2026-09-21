@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapi Barbershop — Cut &amp; Shave (Contoh Website)</title>
+<meta name="description" content="Contoh website barbershop: daftar harga potong rambut, profil barber, jam buka, dan booking. Halaman contoh, bukan usaha nyata.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --hitam:#121110;
+  --hitam-tua:#0B0A09;
+  --emas:#C29A4B;
+  --emas-tua:#A37E33;
+  --putih:#FFFFFF;
+  --krem:#F6F3EE;
+  --abu:#8C867D;
+  --garis:#E2DDD3;
+  --garis-gelap:#2C2A26;
+  --teks:#1C1A17;
+  --display:"Oswald",Impact,sans-serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1120px;
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--krem);color:var(--teks);font-family:var(--sans);font-size:clamp(1rem,.97rem + .15vw,1.0625rem);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,ul,dl,dd{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--emas);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(3.5rem,8vw,6rem)}
+.section--gelap{background:var(--hitam);color:#EDE8E0}
+.eyebrow{font-family:var(--display);font-size:.8125rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--emas-tua);margin-bottom:.6rem}
+.section--gelap .eyebrow{color:var(--emas)}
+.h2{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,1.3rem + 2.4vw,2.9rem);line-height:1.1;letter-spacing:.01em;text-transform:uppercase}
+.lead{color:var(--abu, #64748B);max-width:56ch;margin-top:.85rem}
+.section--gelap .lead{color:#B3ACA1}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:.98rem;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none;border:1px solid transparent;transition:all .18s ease;font-family:var(--sans);letter-spacing:.02em}
+.btn--emas{background:var(--emas);color:var(--hitam-tua)}
+.btn--emas:hover{background:var(--emas-tua);color:var(--putih)}
+.btn--ghost{border-color:#4A453D;color:#EDE8E0;background:transparent}
+.btn--ghost:hover{border-color:var(--emas);color:var(--emas)}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(18,17,16,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis-gelap)}
+.hdr__in{max-width:var(--wrap);margin-inline:auto;padding:.7rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#EDE8E0}
+.brand__mark{width:38px;height:38px;flex:none;border-radius:6px;background:var(--emas);display:grid;place-items:center}
+.brand b{font-family:var(--display);font-weight:600;font-size:1.2rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.05;display:block}
+.brand span{display:block;font-weight:500;font-size:.68rem;color:var(--abu, #64748B);letter-spacing:.14em;text-transform:uppercase}
+.hdr__nav{display:none;gap:1.6rem;font-size:.92rem;font-weight:500}
+.hdr__nav a{text-decoration:none;color:#B3ACA1;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+.hdr__nav a:hover{color:var(--emas)}
+@media(min-width:940px){.hdr__nav{display:flex}}
+.hdr .btn{padding:.6rem 1.05rem;font-size:.85rem}
+.hero{background:var(--hitam);color:#EDE8E0;overflow:hidden}
+.hero__in{max-width:var(--wrap);margin-inline:auto;padding:clamp(2.5rem,7vw,4.5rem) var(--pad) 0;display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.hero__in{grid-template-columns:1.05fr .95fr;align-items:center;padding-bottom:clamp(2.5rem,7vw,4.5rem)}}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,1.3rem + 5.4vw,4.5rem);line-height:1;letter-spacing:.01em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--emas)}
+.hero p{color:#B3ACA1;margin-top:1.35rem;max-width:46ch;font-size:1.05rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media(max-width:520px){.hero__cta{flex-direction:column;align-items:stretch}.hero__cta .btn{justify-content:center}}
+.hero__fig{position:relative;margin:0}
+.hero__fig img{width:100%;aspect-ratio:4/5;max-height:min(64vh,560px);object-fit:cover;border-radius:6px}
+@media(min-width:900px){.hero__fig img{aspect-ratio:auto;height:clamp(420px,66vh,600px);max-height:none}}
+.hero__tag{position:absolute;left:0;bottom:1.4rem;background:var(--emas);color:var(--hitam-tua);padding:.7rem 1.1rem;font-size:.85rem;line-height:1.4;max-width:15rem;font-weight:600}
+.hero__tag span{display:block;font-weight:500;color:#5C4A20}
+.fakta{border-block:1px solid var(--garis-gelap);background:var(--hitam-tua);color:#EDE8E0}
+.fakta ul{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);display:grid}
+@media(min-width:760px){.fakta ul{grid-template-columns:repeat(3,1fr)}}
+.fakta li{padding:1.35rem 0;border-bottom:1px solid var(--garis-gelap)}
+.fakta li:last-child{border-bottom:0}
+@media(min-width:760px){.fakta li{border-bottom:0;border-right:1px solid var(--garis-gelap);padding:1.6rem 1.75rem}.fakta li:first-child{padding-left:0}.fakta li:last-child{border-right:0}}
+.fakta b{display:block;font-family:var(--display);font-weight:600;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;color:var(--emas)}
+.fakta span{display:block;font-size:.875rem;color:#B3ACA1;margin-top:.15rem}
+.harga__head{max-width:var(--wrap);margin:0 auto clamp(1.5rem,4vw,2.5rem)}
+.harga__list{max-width:var(--wrap);margin-inline:auto;border-top:2px solid var(--emas)}
+.harga__row{display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;padding:1.05rem 0;border-bottom:1px solid var(--garis, #D8DEE4)}
+.harga__row b{font-weight:600}
+.harga__row p{color:var(--abu, #64748B);font-size:.92rem;margin-top:.1rem}
+.harga__price{font-family:var(--display);font-size:1.2rem;font-weight:600;white-space:nowrap;color:var(--emas-tua)}
+.barber{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+@media(min-width:760px){.barber{grid-template-columns:repeat(3,1fr)}}
+.barber__card{background:var(--putih);border:1px solid var(--garis, #D8DEE4);padding:1.5rem;text-align:center}
+.barber__ava{width:72px;height:72px;margin:0 auto .9rem;border-radius:50%;background:var(--hitam);color:var(--emas);display:grid;place-items:center;font-family:var(--display);font-size:1.3rem;font-weight:600}
+.barber__card b{display:block;font-size:1.02rem}
+.barber__card span{display:block;font-size:.82rem;color:var(--abu, #64748B);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
+.tentang__in{display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.tentang__in{grid-template-columns:.95fr 1.05fr;align-items:center}}
+.tentang img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.tentang p + p{margin-top:1rem}
+.galeri{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.galeri figure{margin:0;overflow:hidden;aspect-ratio:1;border-radius:4px}
+.galeri img{width:100%;height:100%;object-fit:cover}
+@media(min-width:760px){.galeri{grid-template-columns:repeat(4,1fr)}}
+.lokasi__in{display:grid;gap:clamp(2rem,5vw,3rem)}
+@media(min-width:900px){.lokasi__in{grid-template-columns:1fr 1fr;align-items:start}}
+.lokasi dl{margin:1.75rem 0 0;display:grid;gap:1.1rem}
+.lokasi dt{font-size:.8125rem;font-weight:700;color:var(--emas-tua);margin-bottom:.15rem;text-transform:uppercase;letter-spacing:.1em}
+.lokasi dd a{color:var(--emas-tua)}
+.jam{margin-top:.25rem;border-top:1px solid var(--garis, #D8DEE4)}
+.jam div{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--garis, #D8DEE4);font-size:.95rem}
+.jam div span:last-child{color:var(--abu, #64748B);font-variant-numeric:tabular-nums}
+.peta{border:1.5px dashed var(--garis, #D8DEE4);border-radius:6px;min-height:280px;display:grid;place-items:center;background:var(--putih);color:var(--abu, #64748B);font-size:.9rem}
+.draf{border:1.5px dashed var(--emas-tua);background:#FBF4E9;padding:1.15rem 1.35rem;font-size:.9rem;color:#6E5327;max-width:var(--wrap);margin-inline:auto;border-radius:4px}
+.draf b{color:#4E3A17}
+.ftr{background:var(--hitam-tua);color:#9B948A;padding-top:clamp(2.5rem,6vw,3.5rem);padding-bottom:clamp(4.5rem,8vw,5.5rem)}
+.ftr__in{display:grid;gap:2rem}
+@media(min-width:760px){.ftr__in{grid-template-columns:1.3fr 1fr 1fr}}
+.ftr h3{font-family:var(--display);font-size:.8rem;font-weight:600;color:var(--emas);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.18em}
+.ftr a{color:#9B948A;text-decoration:none}
+.ftr a:hover{color:var(--putih);text-decoration:underline}
+.ftr li{padding:.22rem 0;font-size:.95rem}
+.ftr__brand b{font-family:var(--display);font-size:1.4rem;font-weight:600;color:#EDE8E0;display:block;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em}
+.ftr__brand p{font-size:.925rem;max-width:34ch}
+.ftr__bawah{margin-top:2.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);font-size:.8125rem;color:#6E685F;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
+.wa-float{position:fixed;right:1rem;bottom:1rem;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.6);text-decoration:none;transition:transform .18s ease}
+.wa-float:hover{transform:translateY(-2px)}
+@media(min-width:900px){.wa-float{right:1.5rem;bottom:1.5rem}}
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:naik .7s cubic-bezier(.22,.7,.3,1) forwards}
+  .hero__fig{opacity:0;animation:naik .85s cubic-bezier(.22,.7,.3,1) .16s forwards}
+  @keyframes naik{to{opacity:1;transform:none}}
+}
+
+/* ---------- phase-1: open badge / sticky cta / wa composer ---------- */
+.badge-open{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:.8rem;font-weight:700;padding:.32rem .75rem;border-radius:999px;background:#E8F7EE;color:#146C43;margin-bottom:.9rem;border:1px solid #BFE8CF}
+.badge-open::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA753;flex:none}
+.badge-open.is-closed{background:#FDECEC;color:#B02A2A;border-color:#F5C6C6}
+.badge-open.is-closed::before{background:#E03E3E}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--garis, #D8DEE4);backdrop-filter:blur(8px)}
+.cta-bar .btn{flex:1;justify-content:center;padding:.7rem .9rem;font-size:.92rem;margin:0}
+.cta-bar .btn--bar-ghost{background:#fff;border:1px solid var(--garis, #D8DEE4);color:inherit}
+@media(min-width:760px){.cta-bar{display:none}}
+@media(max-width:759px){body{padding-bottom:4.5rem}.wa-float{bottom:4.7rem}}
+.pesan{display:grid;gap:.85rem;margin-top:1.5rem;max-width:38rem}
+.pesan__grid{display:grid;gap:.75rem}
+.pesan__grid--2{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--2{grid-template-columns:1fr 1fr}}
+.pesan__grid--3{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--3{grid-template-columns:1fr 1fr 1fr}}
+.pesan label{display:grid;gap:.3rem;font-size:.8rem;font-weight:700;color:var(--abu, #64748B);text-align:left}
+.pesan input,.pesan select{font:inherit;font-size:.95rem;padding:.6rem .8rem;border:1px solid var(--garis, #D8DEE4);border-radius:10px;background:#fff;color:inherit;width:100%}
+.pesan input:focus-visible,.pesan select:focus-visible{outline:3px solid #94A3B8;outline-offset:2px}
+.pesan__preview{display:none;border:1.5px dashed #CBD5E1;border-radius:12px;background:#F8FAFC;padding:1rem;font-size:.92rem;white-space:pre-line;color:#334155}
+.pesan__preview.show{display:block}
+.pesan__preview .btn{margin-top:.85rem}
+.pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#atas">
+      <span class="brand__mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#121110" stroke-width="1.9" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></span>
+      <b>Rapi Barbershop<span>Cut &amp; Shave — Contoh</span></b>
+    </a>
+    <nav class="hdr__nav" aria-label="Navigasi utama">
+      <a href="#harga">Harga</a>
+      <a href="#barber">Barber</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="btn btn--emas" href="#" target="_blank" rel="noopener">Booking</a>
+  </div>
+</header>
+
+<main id="atas">
+
+  <section class="hero">
+    <div class="hero__in">
+      <div>
+        <h1 class="reveal">Cukur rapi,<em>harga jujur.</em></h1>
+        <p class="reveal">Barbershop dengan barber berpengalaman, alat yang bersih, dan hasil yang konsisten. Tanpa antre lama &mdash; booking dulu, datang, selesai.</p>
+        <span class="badge-open" id="open-badge">Cek jam buka…</span>
+        <div class="hero__cta reveal">
+          <a class="btn btn--emas" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Booking via WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#harga">Lihat harga</a>
+        </div>
+      </div>
+      <figure class="hero__fig">
+        <img src="assets/ph-hero.jpg" alt="Suasana barbershop (foto contoh)" width="900" height="1200">
+        <figcaption class="hero__tag"><b>Buka 10.00 &ndash; 21.00</b><span>Setiap hari, walk-in &amp; booking</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fakta" aria-label="Ringkasan barbershop">
+    <ul>
+      <li>
+        <b>Barber Berpengalaman</b>
+        <span>Hasil konsisten, ramah, tidak buru-buru</span>
+      </li>
+      <li>
+        <b>Alat Steril</b>
+        <span>Dibersihkan sebelum dan sesudah digunakan</span>
+      </li>
+      <li>
+        <b>Anak &amp; Dewasa</b>
+        <span>Kursi nyaman untuk semua umur</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="harga">
+    <div class="wrap">
+      <div class="harga__head">
+        <p class="eyebrow">Daftar harga</p>
+        <h2 class="h2">Harga transparan</h2>
+        <p class="lead" style="margin-top:.5rem">Daftar di bawah ini contoh &mdash; akan diganti dengan harga asli barbershop Anda.</p>
+      </div>
+      <ul class="harga__list">
+        <li class="harga__row"><div><b>Potong Rambut Dewasa</b><p>Termasuk wash dan styling</p></div><span class="harga__price">Rp 45.000</span></li>
+        <li class="harga__row"><div><b>Potong Rambut Anak</b><p>Untuk umur 12 tahun ke bawah</p></div><span class="harga__price">Rp 35.000</span></li>
+        <li class="harga__row"><div><b>Cukur Jenggot &amp; Kumis</b><p>Dengan hot towel dan after-shave</p></div><span class="harga__price">Rp 30.000</span></li>
+        <li class="harga__row"><div><b>Paket Komplit</b><p>Potong + cukur + wash + styling</p></div><span class="harga__price">Rp 75.000</span></li>
+        <li class="harga__row"><div><b>Hair Tattoo &amp; Desain</b><p>Garis dan pola custom</p></div><span class="harga__price">Rp 25.000</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--gelap" id="barber">
+    <div class="wrap">
+      <p class="eyebrow">Tim kami</p>
+      <h2 class="h2">Barber profesional</h2>
+      <p class="lead" style="margin-bottom:2rem">Profil contoh &mdash; akan diganti dengan tim asli barbershop Anda.</p>
+      <div class="barber">
+        <div class="barber__card">
+          <div class="barber__ava" aria-hidden="true">A</div>
+          <b>Barber A</b>
+          <span>Senior &middot; Classic Cut</span>
+        </div>
+        <div class="barber__card">
+          <div class="barber__ava" aria-hidden="true">B</div>
+          <b>Barber B</b>
+          <span>Fade &amp; Modern Style</span>
+        </div>
+        <div class="barber__card">
+          <div class="barber__ava" aria-hidden="true">C</div>
+          <b>Barber C</b>
+          <span>Beard &amp; Hot Towel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeri">
+    <div class="wrap">
+      <p class="eyebrow">Galeri</p>
+      <h2 class="h2">Suasana &amp; hasil</h2>
+      <p class="lead" style="margin-bottom:2rem">Foto contoh (placeholder) &mdash; bukan foto usaha mana pun.</p>
+      <div class="galeri">
+        <figure><img src="assets/ph-g1.jpg" alt="Kursi barbershop (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g2.jpg" alt="Alat cukur tertata (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g3.jpg" alt="Proses potong rambut (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g4.jpg" alt="Hasil potongan rapi (foto contoh)" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gelap lokasi" id="lokasi">
+    <div class="wrap lokasi__in">
+      <div>
+        <p class="eyebrow">Lokasi &amp; jam buka</p>
+        <h2 class="h2">Lokasi barbershop Anda di sini.</h2>
+        <p class="lead" style="margin-top:.85rem">Teks lokasi contoh &mdash; akan diganti dengan alamat asli barbershop Anda.</p>
+
+        <dl>
+          <div>
+            <dt>Alamat</dt>
+            <dd>Alamat contoh<br>Jl. Contoh No. 00, Jakarta<br>Indonesia</dd>
+          </div>
+          <div>
+            <dt>Telepon &amp; WhatsApp</dt>
+            <dd><a href="#">+62 8xx-xxxx-xxxx</a></dd>
+          </div>
+          <div>
+            <dt>Jam buka</dt>
+            <dd>
+              <div class="jam">
+                <div><span>Senin&ndash;Jumat</span><span>10.00&ndash;21.00</span></div>
+                <div><span>Sabtu&ndash;Minggu</span><span>09.00&ndash;21.00</span></div>
+              </div>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="pesan" id="pesan-form">
+  <div class="pesan__grid pesan__grid--2">
+    <label>Nama<input type="text" name="nama" placeholder="Nama Anda" required></label>
+    <label>Pilih layanan<select name="layanan" required><option value="">-- pilih --</option><option>Potong Rambut Dewasa</option><option>Potong Rambut Anak</option><option>Cukur Jenggot &amp; Kumis</option><option>Paket Komplit</option><option>Hair Tattoo &amp; Desain</option></select></label>
+  </div>
+  <div class="pesan__grid pesan__grid--3">
+    <label>Tanggal<input type="date" name="tanggal" required></label>
+    <label>Jam<input type="time" name="jam" required></label>
+    <label>Catatan (opsional)<input type="text" name="catatan" placeholder="cth: request khusus"></label>
+  </div>
+  <div class="pesan__actions"><button class="btn btn--emas" type="submit">Buat pesan WhatsApp</button></div>
+  <div class="pesan__preview" id="pesan-preview">
+    <p id="pesan-text" style="margin:0"></p>
+    <a class="btn btn--emas" id="pesan-wa-link" href="#" target="_blank" rel="noopener" style="display:none">Buka di WhatsApp</a>
+  </div>
+</form>
+
+        <div style="margin-top:1.75rem">
+          <a class="btn btn--emas" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Booking sekarang
+          </a>
+        </div>
+      </div>
+
+      <div class="peta" role="img" aria-label="Peta lokasi (contoh)">Peta lokasi (contoh)</div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:clamp(2.5rem,6vw,4rem)">
+    <div class="draf">
+      <b>Catatan: ini contoh tampilan (mockup).</b><br>
+      Semua konten di halaman ini adalah placeholder: nama barbershop, alamat, kontak, foto, dan harga. Tidak ada afiliasi dengan usaha mana pun. Halaman ini siap disesuaikan dengan data asli barbershop Anda.
+    </div>
+  </div>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <div class="ftr__brand">
+      <b>Rapi Barbershop</b>
+      <p>Contoh tampilan website barbershop. Bukan usaha nyata.</p>
+    </div>
+    <div>
+      <h3>Kontak</h3>
+      <ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">+62 8xx-xxxx-xxxx</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#harga">Daftar harga</a></li>
+        <li><a href="#barber">Tim barber</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr__bawah">
+    <span>&copy; 2026 Rapi Barbershop (contoh)</span>
+    <span>Website oleh Ibrahim Nurjasman Nugroho</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Hubungi barbershop lewat WhatsApp (contoh)">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+</a>
+
+<div class="cta-bar" aria-label="Aksi cepat">
+  <a class="btn btn--emas" href="#lokasi">Booking</a>
+  <a class="btn btn--bar-ghost" href="#">WhatsApp</a>
+</div>
+
+<script>
+function demoNotice(){alert('Ini halaman demo. Tombol ini akan terhubung ke WhatsApp / tautan resmi usaha Anda.');}
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href="#"]');
+  if(a){ e.preventDefault(); demoNotice(); }
+});
+</script>
+
+<script>
+(function(){
+  var CFG = {name: "Rapi Barbershop", hours: [[9,21],[10,21],[10,21],[10,21],[10,21],[10,21],[9,21]]};
+  function updateBadge(){
+    var el = document.getElementById('open-badge');
+    if(!el) return;
+    var now = new Date();
+    var r = CFG.hours[now.getDay()];
+    var h = now.getHours() + now.getMinutes() / 60;
+    var open = !!(r && h >= r[0] && h < r[1]);
+    el.textContent = open ? 'Buka sekarang' : 'Sedang tutup';
+    el.classList.toggle('is-closed', !open);
+  }
+  updateBadge(); setInterval(updateBadge, 60000);
+
+  var form = document.getElementById('pesan-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      function g(n){ var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; }
+      var nama = g('nama'), layanan = g('layanan'), tanggal = g('tanggal'), jam = g('jam'), catatan = g('catatan');
+      
+      var msg = 'Halo ' + CFG.name + '!\n\nSaya ' + nama + '.\nIngin booking: ' + layanan + '\nTanggal: ' + tanggal + '\nJam: ' + jam;
+      if(catatan){ msg += '\nCatatan: ' + catatan; }
+      msg += '\n\nTerima kasih.';
+      var box = document.getElementById('pesan-preview');
+      document.getElementById('pesan-text').textContent = msg + '\n\n(Demo: tombol di bawah mensimulasikan alur asli. Saat live, pesan langsung mengarah ke WhatsApp resmi usaha Anda.)';
+      var wa = document.getElementById('pesan-wa-link');
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      wa.style.display = 'inline-flex';
+      box.classList.add('show');
+      box.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+})();
+</script>
+</body>
+</html>

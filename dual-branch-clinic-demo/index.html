@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aesthetic & Body Clinic — Medi-Facial, Lymphatic &amp; Aesthetic Clinic</title>
+<meta name="description" content="Klinik estetika & wellness premium di Jakarta Selatan & Jakarta Barat. Spesialis Medi-Facial, Brazilian Lymphatic Massage, Medical Camo, dan konsultasi medis dr. [Nama Dokter].">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- DESIGN TOKENS (LUXURY WELLNESS PALETTE) ---------- */
+:root {
+  --sand: #FBF8F5;          /* Warm cream background */
+  --sand-card: #FFFFFF;     /* Pure white card */
+  --sand-muted: #F2ECE4;    /* Light beige border & pill */
+  --gold: #B38E5D;          /* Champagne gold accent */
+  --gold-dark: #8C6A3C;     /* Dark gold for accessible text */
+  --gold-soft: #F9F4EB;     /* Soft gold tag background */
+  --espresso: #1E1B18;      /* Deep warm black text */
+  --charcoal: #4A4641;      /* Secondary dark text */
+  --muted: #7D776F;         /* Muted gray text */
+  --border: #E8DFD5;        /* Subtle border */
+  --sage: #5E7262;          /* Botanical sage accent */
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --wrap: 1140px;
+  --pad: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--sand);
+  color: var(--espresso);
+  font-family: var(--sans);
+  font-size: clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p, figure, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+button { font-family: inherit; border: none; background: none; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.section {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 1.2rem + 4.5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--espresso);
+}
+
+.h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.075rem;
+  max-width: 54ch;
+  margin-top: 0.85rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.45rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--espresso);
+  color: var(--sand);
+}
+.btn--primary:hover {
+  background: var(--gold-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: #fff;
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  border: 1px solid var(--border);
+  color: var(--espresso);
+  background: #fff;
+}
+.btn--outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+
+/* ---------- HEADER & TOPBAR ---------- */
+.topbar {
+  background: var(--espresso);
+  color: #D6CEC5;
+  font-size: 0.8125rem;
+  padding: 0.45rem var(--pad);
+  text-align: center;
+}
+.topbar b { color: #fff; }
+
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(251, 248, 245, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.hdr__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem var(--pad);
+  max-width: var(--wrap);
+  margin-inline: auto;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+.brand__name {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--espresso);
+  line-height: 1;
+}
+.brand__sub {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.hdr__nav {
+  display: none;
+  gap: 1.6rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+.hdr__nav a:hover { color: var(--gold-dark); }
+@media (min-width: 960px) { .hdr__nav { display: flex; } }
+
+/* Cabang Switcher Pill di Header */
+.branch-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--sand-muted);
+  border-radius: 999px;
+  padding: 0.25rem;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.branch-pill button {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+.branch-pill button.active {
+  background: #fff;
+  color: var(--espresso);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold-dark);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(179, 142, 93, 0.2);
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.hero__visual {
+  background: linear-gradient(145deg, #F2E8DC, #E2D3C1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 20px 40px -15px rgba(30, 27, 24, 0.08);
+  border: 1px solid var(--border);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero__visual-quote {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-style: italic;
+  color: var(--espresso);
+  line-height: 1.35;
+}
+.hero__visual-author {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.hero__card-box {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+/* ---------- FACTS BAR ---------- */
+.facts {
+  border-block: 1px solid var(--border);
+  background: #fff;
+  padding-block: 1.5rem;
+}
+.facts__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (min-width: 800px) {
+  .facts__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.fact-item {
+  display: flex;
+  flex-direction: column;
+}
+.fact-item b {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  color: var(--espresso);
+  line-height: 1.1;
+}
+.fact-item span {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* ---------- INTERACTIVE CATALOG (SOLUSI 6 PDF DRIVE) ---------- */
+.catalog {
+  background: var(--sand);
+}
+.catalog__header {
+  text-align: center;
+  max-width: 650px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+/* Category Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  justify-content: flex-start;
+  scrollbar-width: none;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.tabs::-webkit-scrollbar { display: none; }
+@media (min-width: 800px) {
+  .tabs { justify-content: center; }
+}
+
+.tab-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 999px;
+  background: transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.tab-btn:hover {
+  color: var(--espresso);
+  background: rgba(0,0,0,0.03);
+}
+.tab-btn.active {
+  background: var(--espresso);
+  color: #fff;
+}
+
+/* Treatment Grid & Cards */
+.treat-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 700px) {
+  .treat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1040px) {
+  .treat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: var(--sand-card);
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -10px rgba(30, 27, 24, 0.08);
+  border-color: var(--gold);
+}
+
+.card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: var(--gold-soft);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.card__title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--espresso);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.card__desc {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--sand-muted);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.card__action {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.card__action:hover { text-decoration: underline; }
+
+/* ---------- DUA CABANG ELEGAN ---------- */
+.branches {
+  background: #fff;
+}
+.branch-grid {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 800px) {
+  .branch-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.branch-card {
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 2.25rem;
+  background: var(--sand);
+  position: relative;
+  transition: all 0.2s ease;
+}
+.branch-card.active-branch {
+  border-color: var(--gold-dark);
+  background: #fff;
+  box-shadow: 0 16px 36px -12px rgba(140, 106, 60, 0.12);
+}
+
+.branch-card h3 {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+
+.branch-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.branch-info {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 1.25rem 1.75rem;
+  font-size: 0.95rem;
+}
+.branch-info div {
+  display: flex;
+  gap: 0.75rem;
+}
+.branch-info span:first-child {
+  color: var(--muted);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+/* ---------- DOKTER PENANGGUNG JAWAB ---------- */
+.doctor-sec {
+  background: var(--sand-muted);
+}
+.doctor-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+@media (min-width: 850px) {
+  .doctor-box { grid-template-columns: 0.7fr 1.3fr; }
+}
+.doctor-ava {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--gold-dark);
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  border: 3px solid var(--border);
+  margin-inline: auto;
+}
+
+/* ---------- DISCLAIMER MOCKUP ---------- */
+.mockup-alert {
+  background: #FFF9F0;
+  border: 1.5px dashed var(--gold);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  color: #7A5623;
+  font-size: 0.9rem;
+  margin-block: 2rem;
+}
+.mockup-alert b { color: #523712; }
+
+/* ---------- FOOTER ---------- */
+.ftr {
+  background: var(--espresso);
+  color: #B5ACA3;
+  padding-block: 3.5rem 2rem;
+  font-size: 0.9rem;
+}
+.ftr__grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 760px) {
+  .ftr__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+.ftr h4 {
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+.ftr a:hover { color: #fff; text-decoration: underline; }
+.ftr__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+/* ---------- FLOATING WHATSAPP BUTTON ---------- */
+.wa-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 99;
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease;
+}
+.wa-float:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- phase-1: open badge / sticky cta / wa composer ---------- */
+.badge-open{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:.8rem;font-weight:700;padding:.32rem .75rem;border-radius:999px;background:#E8F7EE;color:#146C43;margin-bottom:.9rem;border:1px solid #BFE8CF}
+.badge-open::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA753;flex:none}
+.badge-open.is-closed{background:#FDECEC;color:#B02A2A;border-color:#F5C6C6}
+.badge-open.is-closed::before{background:#E03E3E}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--garis, #D8DEE4);backdrop-filter:blur(8px)}
+.cta-bar .btn{flex:1;justify-content:center;padding:.7rem .9rem;font-size:.92rem;margin:0}
+.cta-bar .btn--bar-ghost{background:#fff;border:1px solid var(--garis, #D8DEE4);color:inherit}
+@media(min-width:760px){.cta-bar{display:none}}
+@media(max-width:759px){body{padding-bottom:4.5rem}.wa-float{bottom:4.7rem}}
+.pesan{display:grid;gap:.85rem;margin-top:1.5rem;max-width:38rem}
+.pesan__grid{display:grid;gap:.75rem}
+.pesan__grid--2{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--2{grid-template-columns:1fr 1fr}}
+.pesan__grid--3{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--3{grid-template-columns:1fr 1fr 1fr}}
+.pesan label{display:grid;gap:.3rem;font-size:.8rem;font-weight:700;color:var(--abu, #64748B);text-align:left}
+.pesan input,.pesan select{font:inherit;font-size:.95rem;padding:.6rem .8rem;border:1px solid var(--garis, #D8DEE4);border-radius:10px;background:#fff;color:inherit;width:100%}
+.pesan input:focus-visible,.pesan select:focus-visible{outline:3px solid #94A3B8;outline-offset:2px}
+.pesan__preview{display:none;border:1.5px dashed #CBD5E1;border-radius:12px;background:#F8FAFC;padding:1rem;font-size:.92rem;white-space:pre-line;color:#334155}
+.pesan__preview.show{display:block}
+.pesan__preview .btn{margin-top:.85rem}
+.pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+
+</style>
+</head>
+<body>
+
+<!-- TOP ANNOUNCEMENT -->
+<div class="topbar">
+  Reservasi &amp; Konsultasi Aesthetic & Body Clinic: <b>Jakarta Selatan</b> (08xx-xxxx-xxxx) &amp; <b>Jakarta Barat</b> (08xx-xxxx-xxxx)
+</div>
+
+<!-- STICKY HEADER -->
+<header class="hdr">
+  <div class="hdr__in">
+    <a href="#atas" class="brand">
+      <span class="brand__name">Aesthetic & Body Clinic</span>
+      <span class="brand__sub">Medi-Facial &amp; Body Sanctuary</span>
+    </a>
+
+    <!-- Navigasi Menu Desktop -->
+    <nav class="hdr__nav">
+      <a href="#menu">Menu &amp; Pricelist</a>
+      <a href="#cabang">Dua Cabang</a>
+      <a href="#dokter">Tentang Dokter</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <!-- Branch Selector Langsung di Header -->
+    <div style="display:flex; align-items:center; gap:0.75rem;">
+      <div class="branch-pill" aria-label="Pilih Cabang Utama">
+        <button type="button" id="pill-kj" class="active" onclick="switchBranch('kj')">Jakarta Barat</button>
+        <button type="button" id="pill-pi" onclick="switchBranch('pi')">Jakarta Selatan</button>
+      </div>
+
+      <a id="hdr-wa-btn" class="btn btn--gold" style="padding:0.55rem 1rem; font-size:0.85rem;" href="#" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="atas">
+
+  <!-- HERO SECTION -->
+  <section class="hero wrap">
+    <div class="hero__grid">
+      <div>
+        <div class="hero__badge">
+          <span>Aesthetic &amp; Body Sanctuary in Jakarta</span>
+        </div>
+        <h1 class="h1">Kembalikan kesegaran kulit &amp; tubuh Anda dalam sentuhan medis.</h1>
+        <p class="lead">Aesthetic & Body Clinic menghadirkan perpaduan perawatan medi-facial klinis, Brazilian lymphatic drainage massage, dan keahlian estetika di bawah supervisi dr. [Nama Dokter].</p>
+        
+        <span class="badge-open" id="open-badge">Cek jam buka…</span>
+        <div class="hero__cta">
+          <a id="hero-wa-btn" class="btn btn--primary" href="#" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            <span id="hero-btn-text">Reservasi di Jakarta Barat</span>
+          </a>
+          <a class="btn btn--outline" href="#menu">Lihat Menu &amp; Pricelist</a>
+        </div>
+      </div>
+
+      <!-- KARTU VISUAL HERO -->
+      <div class="hero__visual">
+        <div>
+          <p class="hero__visual-quote">"True skin confidence is born from medical precision and mindful body recovery."</p>
+          <p class="hero__visual-author">Aesthetic & Body Clinic Experience</p>
+        </div>
+
+        <div class="hero__card-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <b style="font-size:0.9rem; color:var(--espresso);">Cabang Aktif Dipilih:</b>
+            <span id="card-branch-tag" style="font-size:0.75rem; font-weight:700; color:var(--gold-dark); background:var(--gold-soft); padding:0.15rem 0.5rem; border-radius:4px;">Jakarta Barat</span>
+          </div>
+          <p id="card-branch-addr" style="font-size:0.85rem; color:var(--muted); line-height:1.4;">Alamat contoh - Jl. Contoh No. 00, Jakarta Barat</p>
+          <div style="margin-top:0.75rem; font-size:0.8rem; color:var(--gold-dark); font-weight:600;">
+            WhatsApp: <span id="card-branch-phone">08xx-xxxx-xxxx</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS BAR -->
+  <section class="facts" aria-label="Fakta klinik">
+    <div class="wrap">
+      <ul class="facts__list">
+        <li class="fact-item">
+          <b>5.0 ★★★★★</b>
+          <span>contoh tampilan rating</span>
+        </li>
+        <li class="fact-item">
+          <b>contoh tampilan komunitas</b>
+          <span>Komunitas Instagram (contoh)</span>
+        </li>
+        <li class="fact-item">
+          <b>2 Cabang Elit</b>
+          <span>Jakarta Selatan &amp; Jakarta Barat</span>
+        </li>
+        <li class="fact-item">
+          <b>dr. [Nama Dokter]</b>
+          <span>Supervisi Dokter Estetika Berpengalaman</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KATALOG PRICELIST & MENU INTERAKTIF (PENGGANTI 6 PDF GOOGLE DRIVE) -->
+  <section class="section catalog" id="menu">
+    <div class="wrap">
+      <div class="catalog__header">
+        <span class="eyebrow">Digital Treatment Catalog</span>
+        <h2 class="h2">Menu Perawatan &amp; Pricelist</h2>
+        <p class="lead" style="margin-inline:auto;">Jelajahi seluruh menu Aesthetic & Body Clinic secara interaktif langsung di layar ponsel Anda.</p>
+      </div>
+
+      <!-- TABS KATEGORI -->
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" onclick="filterCatalog('all', this)">Semua Menu</button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCatalog('facial', this)">Medi-Facial</button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCatalog('lymphatic', this)">Lymphatic &amp; Body</button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCatalog('doctor', this)">Expertise Dokter</button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCatalog('Medical Camo', this)">Medical Camo</button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCatalog('promo', this)">Promo Ongoing 2026</button>
+      </div>
+
+      <!-- GRID TREATMENT -->
+      <div class="treat-grid" id="treat-container">
+
+        <!-- FACIAL -->
+        <article class="card" data-category="facial">
+          <div>
+            <span class="card__tag">Medi-Facial</span>
+            <h3 class="card__title">Oxygen Glow Medi-Facial</h3>
+            <p class="card__desc">Infusi oksigen murni bertekanan tinggi dengan serum khusus untuk membersihkan pori secara mendalam, meredakan inflamasi, dan membuat kulit tampak bercahaya seketika.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Non-extraction</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Oxygen Glow Medi-Facial" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-category="facial">
+          <div>
+            <span class="card__tag">Medi-Facial</span>
+            <h3 class="card__title">Radio Frequency (RF) Firming</h3>
+            <p class="card__desc">Teknologi gelombang radio untuk menghantarkan energi hangat ke lapisan dermis, menstimulasi pembentukan kolagen baru, dan mengencangkan kontur rahang.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Face Contouring</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Radio Frequency RF Firming" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- LYMPHATIC & BODY -->
+        <article class="card" data-category="lymphatic">
+          <div>
+            <span class="card__tag">Signature Body</span>
+            <h3 class="card__title">Brazilian Lymphatic Drainage</h3>
+            <p class="card__desc">Teknik pemijatan limfatik khas Brasil untuk melancarkan sirkulasi cairan getah bening, mengurangi retensi air (water retention), mengatasi perut kembung, dan meredakan pegal.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Detox &amp; Slimming</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Brazilian Lymphatic Drainage" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-category="lymphatic">
+          <div>
+            <span class="card__tag">Body Recovery</span>
+            <h3 class="card__title">Infrared Detox Sauna</h3>
+            <p class="card__desc">Terapi sauna cahaya inframerah jauh yang menembus ke dalam jaringan tubuh untuk detoksifikasi mendalam, memperlancar metabolisme sel, dan membakar kalori tanpa kelelahan.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Deep Relaxation</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Infrared Detox Sauna" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-category="lymphatic">
+          <div>
+            <span class="card__tag">Post-Op Care</span>
+            <h3 class="card__title">Post-Surgery Lymph Recovery</h3>
+            <p class="card__desc">Perawatan khusus pasca tindakan operasi estetika/bedah untuk mempercepat penyembuhan lebam, mengurangi pembengkakan cairan (edema), dan merapikan jaringan parut.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Medical Recovery</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Post-Surgery Lymph Recovery" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- EXPERTISE DOKTER -->
+        <article class="card" data-category="doctor">
+          <div>
+            <span class="card__tag">Doctor Expertise</span>
+            <h3 class="card__title">Botox Anti-Wrinkle Injection</h3>
+            <p class="card__desc">Tindakan medis presisi oleh dr. [Nama Dokter] untuk merelaksasi otot penyebab kerutan dahi, garis senyum, serta meniruskan rahang (masseter) dengan hasil natural.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Supervisi Dokter</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Botox Anti-Wrinkle by dr. [Nama Dokter]" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-category="doctor">
+          <div>
+            <span class="card__tag">Doctor Expertise</span>
+            <h3 class="card__title">Skin Booster &amp; Collagen Stimulator</h3>
+            <p class="card__desc">Mikroinjeksi asam hialuronat murni dan nutrisi esensial untuk mengembalikan elastisitas kulit dari dalam, menghidrasi kulit dehidrasi, dan menyamarkan garis halus.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Supervisi Dokter</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Skin Booster by dr. [Nama Dokter]" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Medical Camo -->
+        <article class="card" data-category="Medical Camo">
+          <div>
+            <span class="card__tag">Medical Camo</span>
+            <h3 class="card__title">Medical Camouflage Micropigmentation</h3>
+            <p class="card__desc">Teknik pigmen medis khusus untuk menyamarkan tampilan stretch marks putih (striae alba), bekas luka operasi caesar, atau vitiligo agar warna kulit tampak menyatu sempurna.</p>
+          </div>
+          <div class="card__footer">
+            <span style="font-size:0.85rem; color:var(--muted);">Permanent Camo</span>
+            <a class="card__action treat-btn" href="#" data-treatment="Medical Camo Stretch Marks Micropigmentation" onclick="bookTreatment(this, event)">
+              Book via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- PROMO -->
+        <article class="card" data-category="promo" style="border-color:var(--gold); background:#FFFAF2;">
+          <div>
+            <span class="card__tag" style="background:var(--espresso); color:#fff;">Promo Ongoing 2026</span>
+            <h3 class="card__title">Seasonal Glow &amp; Sculpt Package</h3>
+            <p class="card__desc">Paket kombinasi istimewa: 1x Medi-Facial + 1x Brazilian Lymphatic Drainage Massage dengan harga spesial musim ini. Slot terbatas per hari.</p>
+          </div>
+          <div class="card__footer">
+            <b style="font-size:0.85rem; color:var(--gold-dark);">Special Offer</b>
+            <a class="card__action treat-btn" href="#" data-treatment="Promo Seasonal Glow &amp; Sculpt Package" onclick="bookTreatment(this, event)">
+              Klaim Promo via WA &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DUA CABANG KELAS ATAS -->
+  <section class="section branches" id="cabang">
+    <div class="wrap">
+      <div style="text-align:center; max-width:650px; margin-inline:auto;">
+        <span class="eyebrow">Lokasi Kami</span>
+        <h2 class="h2">Dua Cabang Strategis di Jakarta</h2>
+        <p class="lead" style="margin-inline:auto;">Pilih cabang terdekat dari kediaman Anda. Setiap cabang dilengkapi ruang perawatan steril dan fasilitas medis lengkap.</p>
+      </div>
+
+      <div class="branch-grid">
+
+        <!-- CABANG Jakarta Barat -->
+        <div class="branch-card active-branch" id="card-branch-kj">
+          <span class="branch-badge">JAKARTA BARAT</span>
+          <h3>Cabang Jakarta Barat</h3>
+          <p style="color:var(--muted); font-size:0.925rem;">Sanctuary perawatan kulit dan tubuh di kawasan perumahan yang tenang.</p>
+
+          <div class="branch-info">
+            <div>
+              <span>Alamat</span>
+              <p>Alamat contoh - Jl. Contoh No. 00, Jakarta Barat</p>
+            </div>
+            <div>
+              <span>Jam Buka</span>
+              <p>Senin – Sabtu: 09.00 – 19.00 WIB (Minggu dengan reservasi)</p>
+            </div>
+            <div>
+              <span>WhatsApp</span>
+              <p><a href="#" style="color:var(--gold-dark); font-weight:600;" target="_blank" rel="noopener">+62 8xx-xxxx-xxxx</a></p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Reservasi Jakarta Barat</a>
+            <a class="btn btn--outline" href="#" target="_blank" rel="noopener">Petunjuk Peta</a>
+          </div>
+        </div>
+
+        <!-- CABANG Jakarta Selatan -->
+        <div class="branch-card" id="card-branch-pi">
+          <span class="branch-badge">JAKARTA SELATAN</span>
+          <h3>Cabang Jakarta Selatan</h3>
+          <p style="color:var(--muted); font-size:0.925rem;">Klinik eksklusif di jalan utama Metro Jakarta Selatan dengan privasi maksimal.</p>
+
+          <div class="branch-info">
+            <div>
+              <span>Alamat</span>
+              <p>Alamat contoh - Jl. Contoh No. 00, Jakarta Selatan</p>
+            </div>
+            <div>
+              <span>Jam Buka</span>
+              <p>Senin – Sabtu: 09.00 – 19.00 WIB (Minggu dengan reservasi)</p>
+            </div>
+            <div>
+              <span>WhatsApp</span>
+              <p><a href="#" style="color:var(--gold-dark); font-weight:600;" target="_blank" rel="noopener">+62 8xx-xxxx-xxxx</a></p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Reservasi Jakarta Selatan</a>
+            <a class="btn btn--outline" href="#" target="_blank" rel="noopener">Petunjuk Peta</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DOKTER PENANGGUNG JAWAB -->
+  <section class="section doctor-sec" id="dokter">
+    <div class="wrap">
+      <div class="doctor-box">
+        <div style="text-align:center;">
+          <div class="doctor-ava" aria-hidden="true">dr.</div>
+          <b style="font-family:var(--serif); font-size:1.6rem; color:var(--espresso); display:block; margin-top:1rem;">dr. [Nama Dokter]</b>
+          <span style="font-size:0.85rem; color:var(--gold-dark); font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Aesthetic Doctor &amp; Founder</span>
+        </div>
+
+        <div>
+          <span class="eyebrow">Filosofi Perawatan</span>
+          <h2 class="h2" style="margin-bottom:1rem;">Kecantikan yang berakar pada kesehatan tubuh &amp; ketepatan medis.</h2>
+          <p style="color:var(--charcoal); margin-bottom:1rem;">Di Aesthetic & Body Clinic, kami meyakini bahwa kulit yang sehat tidak bisa dipisahkan dari kelancaran sirkulasi tubuh secara holistik. Itulah mengapa kami menggabungkan teknologi facial modern dengan Brazilian lymphatic drainage yang telah terbukti secara ilmiah.</p>
+          <p style="color:var(--muted); font-size:0.95rem;">Setiap pasien mendapatkan konsultasi khusus untuk menentukan rencana perawatan yang paling aman, efektif, dan minim masa pemulihan (*downtime*).</p>
+        </div>
+      </div>
+
+      <!-- CATATAN DRAF MOCKUP -->
+      <form class="pesan" id="pesan-form">
+  <div class="pesan__grid pesan__grid--2">
+    <label>Nama<input type="text" name="nama" placeholder="Nama Anda" required></label>
+    <label>Pilih cabang<select name="cabang" required><option value="">-- pilih --</option><option>Jakarta Barat</option><option>Jakarta Selatan</option></select></label>
+  </div>
+  <div class="pesan__grid pesan__grid--2">
+    <label>Pilih layanan<select name="layanan" required><option value="">-- pilih --</option><option>Oxygen Glow Medi-Facial</option><option>Radio Frequency Firming</option><option>Brazilian Lymphatic Drainage</option><option>Infrared Detox Sauna</option><option>Post-Surgery Lymph Recovery</option><option>Botox Anti-Wrinkle</option><option>Skin Booster</option><option>Medical Camo</option></select></label>
+    <label>Tanggal<input type="date" name="tanggal" required></label>
+  </div>
+  <div class="pesan__grid pesan__grid--2">
+    <label>Jam<input type="time" name="jam" required></label>
+    <label>Catatan (opsional)<input type="text" name="catatan" placeholder="cth: request khusus"></label>
+  </div>
+  <div class="pesan__actions"><button class="btn btn--gold" type="submit">Buat pesan WhatsApp</button></div>
+  <div class="pesan__preview" id="pesan-preview">
+    <p id="pesan-text" style="margin:0"></p>
+    <a class="btn btn--gold" id="pesan-wa-link" href="#" target="_blank" rel="noopener" style="display:none">Buka di WhatsApp</a>
+  </div>
+</form>
+
+      <div class="mockup-alert">
+        <b>Catatan:</b> Ini contoh tampilan (mockup) untuk portofolio. Semua nama, kontak, alamat, dan ulasan adalah placeholder &mdash; tidak ada afiliasi dengan klinik mana pun.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="ftr" id="kontak">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <b style="font-family:var(--serif); font-size:1.5rem; color:#fff; display:block; margin-bottom:0.5rem;">Aesthetic & Body Clinic</b>
+        <p style="font-size:0.9rem; max-width:32ch; line-height:1.6;">Medi-Facial, Brazilian Lymphatic Drainage, dan perawatan estetika medis berizin resmi di Jakarta.</p>
+      </div>
+
+      <div>
+        <h4>Hubungi Kami</h4>
+        <ul style="display:grid; gap:0.4rem;">
+          <li>WA Jakarta Barat: <a href="#" target="_blank" rel="noopener">08xx-xxxx-xxxx</a></li>
+          <li>WA Jakarta Selatan: <a href="#" target="_blank" rel="noopener">08xx-xxxx-xxxx</a></li>
+          <li>Instagram: <a href="#" target="_blank" rel="noopener">@contohklinik</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Menu Cepat</h4>
+        <ul style="display:grid; gap:0.4rem;">
+          <li><a href="#menu">Medi-Facial</a></li>
+          <li><a href="#menu">Lymphatic Drainage</a></li>
+          <li><a href="#menu">Medical Camo</a></li>
+          <li><a href="#dokter">Konsultasi Dokter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ftr__bottom">
+      <span>&copy; 2026 Aesthetic & Body Clinic. All rights reserved.</span>
+      <span>Draf Desain Portofolio oleh Ibrahim Nurjasman Nugroho</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA BUTTON (OTOMATIS MENYESUAIKAN CABANG YANG DIPILIH) -->
+<a id="float-wa-btn" class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+  <span id="float-wa-text">Chat WhatsApp</span>
+</a>
+
+<div class="cta-bar" aria-label="Aksi cepat">
+  <a class="btn btn--gold" href="#kontak">Booking</a>
+  <a class="btn btn--bar-ghost" href="#">WhatsApp</a>
+</div>
+
+<script>
+// ---------- DATA DUA CABANG ----------
+const branches = {
+  kj: {
+    name: "Jakarta Barat",
+    tag: "Jakarta Barat (JAKBAR)",
+    phone: "08xx-xxxx-xxxx",
+    phoneClean: "620000000000",
+    address: "Alamat contoh - Jl. Contoh No. 00, Jakarta Barat"
+  },
+  pi: {
+    name: "Jakarta Selatan",
+    tag: "Jakarta Selatan (JAKSEL)",
+    phone: "08xx-xxxx-xxxx",
+    phoneClean: "620000000000",
+    address: "Alamat contoh - Jl. Contoh No. 00, Jakarta Selatan"
+  }
+};
+
+let currentBranch = 'kj'; // default Jakarta Barat
+
+function switchBranch(key) {
+  currentBranch = key;
+  const b = branches[key];
+
+  // Update button pill header
+  document.getElementById('pill-kj').classList.toggle('active', key === 'kj');
+  document.getElementById('pill-pi').classList.toggle('active', key === 'pi');
+
+  // Update hero button & visual card
+  document.getElementById('hero-btn-text').textContent = "Reservasi di " + b.name;
+  document.getElementById('card-branch-tag').textContent = b.tag;
+  document.getElementById('card-branch-addr').textContent = b.address;
+  document.getElementById('card-branch-phone').textContent = b.phone;
+
+  // Highlight branch card in section cabang
+  document.getElementById('card-branch-kj').classList.toggle('active-branch', key === 'kj');
+  document.getElementById('card-branch-pi').classList.toggle('active-branch', key === 'pi');
+
+  // Update floating WA label
+  document.getElementById('float-wa-text').textContent = "Chat " + b.name;
+}
+
+// ---------- INTERACTIVE TREATMENT FILTER ----------
+function filterCatalog(category, btnElement) {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  btnElement.classList.add('active');
+  btnElement.setAttribute('aria-selected', 'true');
+
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Demo notice for placeholder buttons
+function demoNotice() {
+  alert('Ini halaman demo. Tombol ini akan terhubung ke WhatsApp / tautan resmi klinik Anda.');
+}
+
+// Booking button -> demo notice
+function bookTreatment(element, event) {
+  event.preventDefault();
+  demoNotice();
+}
+
+document.addEventListener('click', function (e) {
+  if (e.defaultPrevented) return;
+  const a = e.target.closest('a[href="#"]');
+  if (a) {
+    e.preventDefault();
+    demoNotice();
+  }
+});
+
+// Initialize default branch
+switchBranch('kj');
+</script>
+
+<script>
+(function(){
+  var CFG = {name: "Aesthetic & Body Clinic", hours: [null,[9,19],[9,19],[9,19],[9,19],[9,19],[9,19]]};
+  function updateBadge(){
+    var el = document.getElementById('open-badge');
+    if(!el) return;
+    var now = new Date();
+    var r = CFG.hours[now.getDay()];
+    var h = now.getHours() + now.getMinutes() / 60;
+    var open = !!(r && h >= r[0] && h < r[1]);
+    el.textContent = open ? 'Buka sekarang' : 'Sedang tutup';
+    el.classList.toggle('is-closed', !open);
+  }
+  updateBadge(); setInterval(updateBadge, 60000);
+
+  var form = document.getElementById('pesan-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      function g(n){ var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; }
+      var nama = g('nama'), layanan = g('layanan'), tanggal = g('tanggal'), jam = g('jam'), catatan = g('catatan');
+      var cabang = g('cabang');
+      var msg = 'Halo ' + CFG.name + (cabang ? ' ' + cabang : '') + '!\n\nSaya ' + nama + '.\nIngin booking: ' + layanan + '\nTanggal: ' + tanggal + '\nJam: ' + jam;
+      if(catatan){ msg += '\nCatatan: ' + catatan; }
+      msg += '\n\nTerima kasih.';
+      var box = document.getElementById('pesan-preview');
+      document.getElementById('pesan-text').textContent = msg + '\n\n(Demo: tombol di bawah mensimulasikan alur asli. Saat live, pesan langsung mengarah ke WhatsApp resmi usaha Anda.)';
+      var wa = document.getElementById('pesan-wa-link');
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      wa.style.display = 'inline-flex';
+      box.classList.add('show');
+      box.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+})();
+</script>
+</body>
+</html>

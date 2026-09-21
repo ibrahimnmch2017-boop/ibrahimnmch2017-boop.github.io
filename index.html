@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tujuh Contoh Website untuk Bisnis Anda — Ibrahim Nurjasman Nugroho</title>
+<meta name="description" content="Tujuh demo website yang bisa dibuka langsung di HP: klinik, kafe, barbershop, bakery, bengkel, pet grooming. Lengkap dengan form WhatsApp otomatis dan jam buka hidup.">
+<meta name="theme-color" content="#0C1930">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C1930;
+  --panel:#101F3A;
+  --card:#13243F;
+  --ink:#EAF1F8;
+  --muted:#9CB0C9;
+  --line:rgba(234,241,248,.12);
+  --line-strong:rgba(234,241,248,.22);
+  --teal:#35BBD0;
+  --teal-deep:#0E7C93;
+  --teal-ink:#08131F;
+  --font-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --font-body:"Spline Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1160px;
+  --pad:clamp(1.25rem,5vw,2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-color:#2A4364 var(--bg)}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-thumb{background:#2A4364;border-radius:8px;border:3px solid var(--bg)}
+::-webkit-scrollbar-track{background:var(--bg)}
+::selection{background:var(--teal);color:var(--teal-ink)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,ul,ol,dd,dt{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:600;font-size:1rem;padding:.82rem 1.5rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.btn--primary{background:var(--teal);color:var(--teal-ink)}
+.btn--primary:hover{background:#5ED0E2;transform:translateY(-1px)}
+.btn--ghost{border-color:var(--line-strong);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal)}
+.hdr{position:sticky;top:0;z-index:60;background:rgba(12,25,48,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr__in{max-width:var(--wrap);margin-inline:auto;padding:.75rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:baseline;gap:.6rem;text-decoration:none;min-width:0}
+.brand b{font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:-.01em;white-space:nowrap}
+.brand span{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.hdr__nav{display:none;gap:1.5rem;font-size:1rem;font-weight:500}
+.hdr__nav a{text-decoration:none;color:var(--muted)}
+.hdr__nav a:hover{color:var(--ink)}
+@media(min-width:880px){.hdr__nav{display:flex}}
+.hdr .btn{padding:.55rem 1.1rem;font-size:1rem}
+@media(max-width:560px){.brand span{display:none}}
+.hero{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2.5rem,6vw,4rem)}
+.hero__in{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(min-width:920px){.hero__in{grid-template-columns:1.02fr .98fr}}
+.hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.3rem,1.25rem + 4.6vw,4.05rem);line-height:1.04;letter-spacing:-.025em;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{color:var(--muted);margin-top:1.25rem;max-width:44ch;font-size:1rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero__note{margin-top:1.1rem;font-size:.75rem;color:var(--muted)}
+.hero__lang{margin-top:.45rem;font-size:.75rem;color:var(--muted)}
+.hero__lang span{border-bottom:1px dotted rgba(156,176,201,.45);padding-bottom:.1rem}
+@media(max-width:520px){.hero__cta{flex-direction:column;align-items:stretch}}
+.stack{position:relative;min-height:0}
+.stack__card{position:absolute;margin:0;border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 30px 70px -30px rgba(0,0,0,.65)}
+.stack__card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.stack__card--front{position:relative;width:82%;left:0;top:0;z-index:3;transform:rotate(-1.6deg)}
+.stack__card--mid{width:56%;right:0;top:-16%;z-index:2;transform:rotate(2.6deg)}
+.stack__card--back{width:50%;right:10%;bottom:-10%;z-index:1;transform:rotate(-5deg)}
+@media(min-width:920px){.stack{min-height:460px}.stack__card--front{position:absolute;width:78%;top:12%}}
+@media(max-width:919px){
+  .stack__card--mid,.stack__card--back{display:none}
+  .stack__card--front{width:100%;transform:none}
+}
+.katalog{padding-bottom:clamp(3rem,7vw,5rem)}
+.katalog__head{display:grid;gap:.85rem;max-width:62ch;margin-bottom:clamp(1.75rem,4vw,2.75rem)}
+.katalog__head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.7rem,1.15rem + 2.2vw,2.5rem);line-height:1.12;letter-spacing:-.02em}
+.katalog__head p{color:var(--muted)}
+.katalog__note{font-size:.75rem;color:var(--muted);border-left:2px solid var(--teal-deep);padding-left:.85rem;max-width:56ch}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1.1rem,2.2vw,1.6rem)}
+.card{grid-column:span 12}
+@media(min-width:820px){
+  .card{grid-column:span 6}
+  .card--a{grid-column:span 12}
+}
+@media(min-width:1100px){
+  .card{grid-column:span 4}
+  .card--a{grid-column:span 7}
+  .card--b{grid-column:span 5}
+  .card--c{grid-column:span 5}
+  .card--d{grid-column:span 7}
+}
+.card{opacity:0;transform:translateY(18px)}
+.card.in{opacity:1;transform:none;transition:opacity .65s cubic-bezier(.16,1,.3,1) var(--d,0s),transform .65s cubic-bezier(.16,1,.3,1) var(--d,0s)}
+@media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none}.card img{transition:none!important}}
+.card__link{display:block;text-decoration:none;border-radius:16px}
+.card__figure{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);transition:border-color .2s ease,transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease}
+.card__figure img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.card__link:hover .card__figure{border-color:var(--line-strong);transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(0,0,0,.7)}
+.card__link:hover .card__figure img{transform:scale(1.025)}
+.card__body{padding:1.05rem .15rem 0}
+.card__meta{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;font-size:.75rem;color:var(--muted);letter-spacing:.02em}
+.card__num{font-variant-numeric:tabular-nums;color:var(--teal)}
+.card__name{font-family:var(--font-display);font-weight:700;font-size:1.5rem;letter-spacing:-.015em;margin-top:.3rem}
+.card__desc{color:var(--muted);font-size:1rem;margin-top:.3rem;max-width:52ch}
+.card__cta{display:inline-flex;align-items:center;gap:.4rem;color:var(--teal);font-weight:600;font-size:1rem;margin-top:.7rem}
+.card__cta svg{transition:transform .2s ease}
+.card__link:hover .card__cta svg{transform:translateX(3px)}
+.isi{padding-top:4rem;padding-bottom:4rem;border-top:1px solid var(--line)}
+.isi h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,1.1rem + 2vw,2.3rem);letter-spacing:-.02em;max-width:24ch}
+.isi__grid{display:grid;gap:1.5rem 2rem;margin-top:clamp(1.5rem,3.5vw,2.5rem)}
+@media(min-width:700px){.isi__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.isi__grid{grid-template-columns:repeat(4,1fr)}}
+.isi__item{border-top:1px solid var(--line-strong);padding-top:1rem}
+.isi__item b{display:block;font-family:var(--font-display);font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.isi__item span{display:block;color:var(--muted);font-size:1rem;margin-top:.4rem}
+.kontak{background:#101F3A;border-top:1px solid var(--line);padding:4.5rem 1.25rem}
+@media(min-width:760px){.kontak{padding-inline:2.5rem}}
+.kontak .wrap{padding-inline:0}
+.kontak h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,1.2rem + 2.6vw,2.9rem);letter-spacing:-.025em;max-width:22ch}
+.kontak p{color:var(--muted);margin-top:1rem;max-width:52ch}
+.kontak__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.9rem}
+.kontak__mail{margin-top:1.4rem;font-size:1rem;color:var(--muted)}
+.kontak__mail a{color:var(--teal);text-underline-offset:3px}
+.kontak__disclaimer{margin-top:2.5rem;font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1.25rem;max-width:64ch}
+.ftr{padding:2rem 0 2.75rem;border-top:1px solid var(--line)}
+.ftr__in{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;align-items:baseline;font-size:.75rem;color:var(--muted)}
+.ftr a{color:var(--muted);text-underline-offset:3px}
+.ftr a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!--
+  THESIS: Ruang pamer karya — dinding navy tempat 7 website menyala; menolak pola landing page kartu seragam dan gaya "portfolio grid" abu-abu generik.
+  OWN-WORLD: Navy #0C1930 + cyan #35BBD0 (token brand CV Ibrahim), sudut membulat 12-18px, garis tipis rgba putih 8-14%, kartu = screenshot penuh dengan meta katalog bernomor.
+  STORY: Pengunjung (pemilik UMKM dari Instagram) melihat bukti nyata 7 website, membuka minimal satu demo di HP, lalu menghubungi Ibrahim via WhatsApp.
+  FIRST VIEWPORT: Kiri — headline besar + 2 CTA; Kanan — tumpukan 3 screenshot bersudut sedikit; galeri mulai tepat di bawah lipatan.
+  FORM: Katalog asimetris 7/5 → 5/7 → 4/4/4 dengan tumpukan sampel di hero (shaped directly, no seed).
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#atas">
+      <b>Ibrahim Nurjasman Nugroho</b>
+      <span>Web Developer &middot; Jakarta</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Navigasi">
+      <a href="#demo">7 Demo</a>
+      <a href="#isi">Isi Demo</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <a class="btn btn--primary" href="https://wa.me/6281358321125?text=Halo%20Ibrahim%2C%20saya%20melihat%20demo%20website%20di%20hub%20portofolio%20Anda." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="atas">
+
+  <section class="hero">
+    <div class="hero__in">
+      <div>
+        <h1>Tujuh contoh website untuk <em>bisnis Anda.</em></h1>
+        <p>Semuanya bisa dibuka langsung di HP seperti website sungguhan: form pesan WhatsApp otomatis, badge buka/tutup mengikuti jam operasional, dan tombol aksi yang selalu terjangkau. Tanpa unduh, tanpa aplikasi.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#demo">Jelajahi 7 demo</a>
+          <a class="btn btn--ghost" href="https://wa.me/6281358321125?text=Halo%20Ibrahim%2C%20saya%20mau%20tanya%20soal%20website%20untuk%20bisnis%20saya." target="_blank" rel="noopener">Tanya via WhatsApp</a>
+        </div>
+        <p class="hero__note">Contoh: klinik, kafe, barbershop, bakery, bengkel, pet grooming.</p>
+        <p class="hero__lang"><span lang="en">All demos are in Indonesian &mdash; built for local businesses.</span></p>
+      </div>
+      <div class="stack" role="img" aria-label="Tumpukan cuplikan tiga demo website">
+        <figure class="stack__card stack__card--back"><img src="assets/thumbs/barbershop-demo.jpg" alt=""></figure>
+        <figure class="stack__card stack__card--mid"><img src="assets/thumbs/cafe-demo.jpg" alt=""></figure>
+        <figure class="stack__card stack__card--front"><img src="assets/thumbs/clinic-demo.jpg" alt="Cuplikan demo website klinik estetika"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="katalog" id="demo">
+    <div class="wrap">
+      <div class="katalog__head">
+        <h2>Katalog demo</h2>
+        <p>Tujuh bidang usaha, satu pola yang sama: cepat, jelas, dan setiap halaman mengarah ke satu aksi — menghubungi Anda.</p>
+      </div>
+      <p class="katalog__note">Semua demo memakai nama, foto, harga, dan ulasan fiktif sebagai contoh — bukan usaha nyata.</p>
+
+      <div class="grid" style="margin-top:clamp(1.5rem,3.5vw,2.5rem)">
+
+        <article class="card card--a" style="--d:0s">
+          <a class="card__link" href="clinic-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/clinic-demo.jpg" alt="Cuplikan demo website Klinik Estetika" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Klinik &amp; Perawatan</span><span class="card__num">01</span></p>
+              <h3 class="card__name">Klinik Estetika</h3>
+              <p class="card__desc">Landing page klinik dengan daftar treatment, galeri suasana, dan form reservasi WhatsApp.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--b" style="--d:.06s">
+          <a class="card__link" href="dual-branch-clinic-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/dual-branch-clinic-demo.jpg" alt="Cuplikan demo website Aesthetic dan Body Clinic" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Klinik Dua Cabang</span><span class="card__num">02</span></p>
+              <h3 class="card__name">Aesthetic &amp; Body Clinic</h3>
+              <p class="card__desc">Portal dua cabang dengan pemilih lokasi, katalog treatment interaktif, dan booking per cabang.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--c" style="--d:.12s">
+          <a class="card__link" href="cafe-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/cafe-demo.jpg" alt="Cuplikan demo website Kedai Senja" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Kafe &amp; Kuliner</span><span class="card__num">03</span></p>
+              <h3 class="card__name">Kedai Senja</h3>
+              <p class="card__desc">Menu, suasana, dan reservasi meja — dengan badge buka/tutup yang hidup.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--d" style="--d:.18s">
+          <a class="card__link" href="barbershop-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/barbershop-demo.jpg" alt="Cuplikan demo website Rapi Barbershop" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Barbershop</span><span class="card__num">04</span></p>
+              <h3 class="card__name">Rapi Barbershop</h3>
+              <p class="card__desc">Daftar harga transparan, profil barber, dan booking cepat lewat WhatsApp.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--e" style="--d:.24s">
+          <a class="card__link" href="bakery-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/bakery-demo.jpg" alt="Cuplikan demo website Dapur Manis" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Bakery</span><span class="card__num">05</span></p>
+              <h3 class="card__name">Dapur Manis</h3>
+              <p class="card__desc">Katalog kue, custom cake, dan alur pemesanan tiga langkah.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--f" style="--d:.3s">
+          <a class="card__link" href="bengkel-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/bengkel-demo.jpg" alt="Cuplikan demo website Garasi Prima" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Otomotif</span><span class="card__num">06</span></p>
+              <h3 class="card__name">Garasi Prima</h3>
+              <p class="card__desc">Layanan servis, estimasi harga, dan booking antrian.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--g" style="--d:.36s">
+          <a class="card__link" href="pet-grooming-demo/index.html">
+            <figure class="card__figure"><img src="assets/thumbs/pet-grooming-demo.jpg" alt="Cuplikan demo website Paw and Care" loading="lazy"></figure>
+            <div class="card__body">
+              <p class="card__meta"><span>Pet Care</span><span class="card__num">07</span></p>
+              <h3 class="card__name">Paw &amp; Care</h3>
+              <p class="card__desc">Layanan grooming, penitipan, dan harga yang ramah pemilik anabul.</p>
+              <span class="card__cta">Buka demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="isi" id="isi">
+    <div class="wrap">
+      <h2>Yang sudah beres di setiap demo.</h2>
+      <div class="isi__grid">
+        <div class="isi__item">
+          <b>Form WhatsApp pintar</b>
+          <span>Pengunjung memilih layanan dan jadwal; pesannya tersusun rapi sebelum dibuka di WhatsApp Anda.</span>
+        </div>
+        <div class="isi__item">
+          <b>Jam buka hidup</b>
+          <span>Badge &ldquo;Buka&rdquo; / &ldquo;Tutup&rdquo; mengikuti jam operasional secara otomatis, siang dan malam.</span>
+        </div>
+        <div class="isi__item">
+          <b>Mobile dulu</b>
+          <span>Tombol aksi selalu terjangkau jempol; nyaman dari layar 390px sampai desktop.</span>
+        </div>
+        <div class="isi__item">
+          <b>Ringan &amp; aksesibel</b>
+          <span>Tanpa framework berat, kontras WCAG AA, dan cepat dibuka di jaringan lambat.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontak" id="kontak">
+    <div class="wrap">
+      <h2>Butuh website seperti ini untuk bisnis Anda?</h2>
+      <p>Saya kerjakan dari nol sesuai bisnis Anda — nama, warna, konten, dan alur WhatsApp-nya. Semua dimulai dari obrolan singkat.</p>
+      <div class="kontak__cta">
+        <a class="btn btn--primary" href="https://wa.me/6281358321125?text=Halo%20Ibrahim%2C%20saya%20mau%20buat%20website%20untuk%20bisnis%20saya." target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+          Chat WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="mailto:ibrahimnmch2017@gmail.com">Kirim email</a>
+      </div>
+      <p class="kontak__mail">atau email langsung: <a href="mailto:ibrahimnmch2017@gmail.com">ibrahimnmch2017@gmail.com</a></p>
+      <p class="kontak__disclaimer">Semua demo di halaman ini adalah contoh dengan nama, foto, harga, dan ulasan fiktif. Website untuk bisnis Anda akan memakai data asli dan identitas Anda.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <span>&copy; 2026 Ibrahim Nurjasman Nugroho — dibangun sendiri, tanpa template pihak ketiga.</span>
+    <span><a href="https://www.linkedin.com/in/ibrahim-nurjasman" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/ibrahimnmch2017-boop" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('.card');
+  if(!('IntersectionObserver' in window)){ cards.forEach(function(c){ c.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{rootMargin:'0px 0px -8% 0px', threshold:.05});
+  cards.forEach(function(c){ io.observe(c); });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klinik Estetika — Aesthetic & Anti-Aging (Contoh Website)</title>
+<meta name="description" content="Contoh website klinik estetika: perawatan wajah dan anti-aging ditangani langsung oleh dokter. Halaman contoh, bukan klinik nyata.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --laut:#0E7C93;          /* teal utama, dari tetes air di logo — isian tombol */
+  --laut-tua:#0A5C6E;
+  --laut-teks:#0A5C6E;     /* versi teks, lolos AA di latar putih & kabut */
+  --embun:#35BBD0;         /* cyan terang, aksen tipis */
+  --tinta:#123A5C;         /* navy utama */
+  --kayu:#B98C4F;          /* kayu oak interior — dekorasi non-teks */
+  --kayu-teks:#7A5A24;     /* versi teks & garis, lolos AA */
+  --kabut:#F1F6F7;         /* latar sejuk */
+  --kabut-tua:#DDE8EA;
+  --putih:#FFFFFF;
+  --abu:#5A6B72;
+  --garis:#CFDDE0;
+
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --wrap:1140px;
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+
+/* ---------- reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--putih);
+  color:var(--tinta);
+  font-family:var(--sans);
+  font-size:clamp(1rem,0.97rem + 0.15vw,1.0625rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,blockquote{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+:focus-visible{outline:3px solid var(--laut);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(3.5rem,9vw,6.5rem)}
+.section--kabut{background:var(--kabut)}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:var(--laut-teks);
+  margin-bottom:.6rem;
+}
+.h2{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(1.9rem,1.3rem + 2.4vw,2.9rem);
+  line-height:1.12;
+  letter-spacing:-.015em;
+  font-variation-settings:"SOFT" 30;
+  max-width:28ch;
+}
+.lead{color:var(--abu, #64748B);max-width:56ch;margin-top:.85rem}
+.note{
+  font-size:.875rem;
+  color:var(--abu, #64748B);
+  margin-top:.5rem;
+  max-width:56ch;
+}
+
+/* ---------- tombol ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--sans);font-weight:600;font-size:1rem;
+  padding:.85rem 1.4rem;border-radius:999px;
+  text-decoration:none;border:1px solid transparent;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease;
+}
+.btn--wa{background:var(--laut);color:var(--putih)}
+.btn--wa:hover{background:var(--laut-tua)}
+.btn--ghost{border-color:var(--garis, #D8DEE4);color:var(--tinta);background:transparent}
+.btn--ghost:hover{border-color:var(--laut);color:var(--laut-teks)}
+.btn svg{flex:none}
+
+/* ---------- header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--garis, #D8DEE4);
+}
+.hdr__in{
+  max-width:var(--wrap);margin-inline:auto;padding:.7rem var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand img{width:38px;height:38px;object-fit:contain;border-radius:6px}
+.brand b{
+  font-family:var(--sans);font-weight:700;font-size:1.02rem;
+  letter-spacing:-.01em;color:var(--tinta);line-height:1.15;
+}
+.brand span{display:block;font-weight:500;font-size:.72rem;color:var(--abu, #64748B);letter-spacing:.02em}
+.hdr .btn{padding:.6rem 1.05rem;font-size:.9rem}
+.hdr__nav{display:none;gap:1.6rem;font-size:.95rem;font-weight:500}
+.hdr__nav a{text-decoration:none;color:var(--abu, #64748B)}
+.hdr__nav a:hover{color:var(--laut-teks)}
+@media(min-width:940px){.hdr__nav{display:flex}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--putih);overflow:hidden}
+.hero__in{
+  max-width:var(--wrap);margin-inline:auto;
+  padding:clamp(2.5rem,7vw,4.5rem) var(--pad) 0;
+  display:grid;gap:clamp(2rem,5vw,3.5rem);
+}
+@media(min-width:900px){
+  .hero__in{
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    padding-bottom:clamp(2.5rem,7vw,4.5rem);
+  }
+}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.5rem,1.3rem + 5.2vw,4.3rem);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  font-variation-settings:"SOFT" 40,"WONK" 1;
+}
+.hero h1 em{font-style:normal;display:block}
+.hero p{color:var(--abu, #64748B);margin-top:1.35rem;max-width:46ch;font-size:1.075rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media(max-width:520px){
+  .hero__cta{flex-direction:column;align-items:stretch}
+  .hero__cta .btn{justify-content:center}
+}
+.hero__fig{position:relative;margin:0}
+.hero__fig img{
+  width:100%;
+  aspect-ratio:4/5;
+  max-height:min(64vh,560px);
+  object-fit:cover;
+  object-position:50% 72%;
+  border-radius:2px 2px 140px 2px;
+}
+@media(min-width:900px){
+  .hero__fig img{aspect-ratio:auto;height:clamp(420px,66vh,600px);max-height:none}
+}
+.hero__tag{
+  position:absolute;left:0;bottom:1.4rem;
+  background:var(--putih);
+  padding:.7rem 1.1rem .75rem;
+  border-left:3px solid var(--embun);
+  font-size:.875rem;line-height:1.4;
+  max-width:15rem;
+  box-shadow:0 10px 30px -18px rgba(18,58,92,.55);
+}
+.hero__tag b{display:block;font-weight:600;color:var(--tinta)}
+.hero__tag span{color:var(--abu, #64748B)}
+
+/* ---------- strip fakta ---------- */
+.fakta{border-block:1px solid var(--garis, #D8DEE4);background:var(--kabut)}
+.fakta ul{
+  max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);
+  display:grid;
+}
+@media(min-width:760px){.fakta ul{grid-template-columns:repeat(3,1fr)}}
+.fakta li{
+  padding:1.35rem 0;
+  border-bottom:1px solid var(--garis, #D8DEE4);
+}
+.fakta li:last-child{border-bottom:0}
+@media(min-width:760px){
+  .fakta li{border-bottom:0;border-right:1px solid var(--garis, #D8DEE4);padding:1.6rem 1.75rem}
+  .fakta li:first-child{padding-left:0}
+  .fakta li:last-child{border-right:0}
+}
+.fakta b{
+  display:block;font-family:var(--serif);font-weight:600;
+  font-size:1.32rem;letter-spacing:-.01em;line-height:1.2;
+}
+.fakta span{display:block;font-size:.875rem;color:var(--abu, #64748B);margin-top:.15rem}
+.fakta a{color:var(--laut-teks);text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* ---------- treatment ---------- */
+.treat__head{max-width:var(--wrap);margin:0 auto clamp(1.8rem,4vw,2.8rem)}
+.treat__list{max-width:var(--wrap);margin-inline:auto;border-top:1px solid var(--garis, #D8DEE4)}
+.treat__item{
+  border-bottom:1px solid var(--garis, #D8DEE4);
+  padding:1.5rem 0;
+  display:grid;gap:.35rem 1.5rem;
+  align-items:baseline;
+}
+@media(min-width:820px){
+  .treat__item{grid-template-columns:minmax(0,19rem) minmax(0,1fr) auto;gap:0 2rem;padding:1.75rem 0}
+}
+.treat__name{
+  font-family:var(--serif);font-weight:500;
+  font-size:1.42rem;letter-spacing:-.01em;line-height:1.25;
+  display:flex;gap:.6rem;align-items:baseline;
+}
+.treat__name svg{flex:none;translate:0 2px}
+.treat__desc{color:var(--abu, #64748B);font-size:.975rem}
+.treat__ask{
+  font-weight:600;font-size:.925rem;color:var(--laut-teks);
+  text-decoration:none;white-space:nowrap;
+  border-bottom:1px solid var(--kabut-tua);
+  padding-bottom:1px;width:max-content;
+}
+.treat__ask:hover{border-bottom-color:var(--laut)}
+
+/* ---------- tentang ---------- */
+.tentang__in{display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.tentang__in{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.tentang img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 46%}
+.tentang p + p{margin-top:1rem}
+.dokter{
+  margin-top:2rem;padding:1.15rem 1.3rem;
+  border:1.5px dashed var(--kabut-tua);
+  display:flex;gap:1rem;align-items:center;
+  background:var(--putih);
+}
+.dokter__ava{
+  width:56px;height:56px;flex:none;border-radius:50%;
+  background:var(--kabut-tua);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:1.15rem;color:var(--laut-teks);
+}
+.dokter b{display:block;font-size:1.02rem;font-weight:600}
+.dokter span{display:block;font-size:.85rem;color:var(--abu, #64748B)}
+.slot-label{
+  display:inline-block;width:max-content;font-size:.7rem;font-weight:600;
+  color:var(--kayu-teks);background:#FBF4E9;
+  padding:.15rem .5rem;border-radius:3px;margin-bottom:.35rem;
+}
+
+/* ---------- galeri ---------- */
+.galeri{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.galeri figure{margin:0;overflow:hidden;aspect-ratio:1}
+.galeri img{width:100%;height:100%;object-fit:cover}
+.galeri figure:nth-child(1) img{object-position:50% 55%}
+@media(min-width:760px){
+  .galeri{grid-template-columns:repeat(3,1fr);gap:.75rem}
+  /* satu foto besar 2x2 + lima foto persegi = kotak penuh tanpa lubang */
+  .galeri figure:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+}
+
+/* ---------- ulasan ---------- */
+.rating{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.rating__num{
+  font-family:var(--serif);font-size:3.1rem;font-weight:600;
+  line-height:1;color:var(--tinta);
+}
+.rating__bintang{color:var(--kayu-teks);font-size:1.05rem;letter-spacing:.12em}
+.rating__meta{font-size:.9rem;color:var(--abu, #64748B)}
+.rating__meta a{color:var(--laut-teks)}
+.ulasan{display:grid;gap:.85rem}
+@media(min-width:820px){.ulasan{grid-template-columns:repeat(3,1fr)}}
+.ulasan__slot{
+  border:1.5px dashed var(--kabut-tua);
+  padding:1.35rem;
+  min-height:9.5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--putih);
+}
+.ulasan__slot p{font-size:.925rem;color:var(--abu, #64748B)}
+
+/* ---------- lokasi ---------- */
+.lokasi__in{display:grid;gap:clamp(2rem,5vw,3rem)}
+@media(min-width:900px){.lokasi__in{grid-template-columns:1fr 1fr;align-items:start}}
+.lokasi dl{margin:1.75rem 0 0;display:grid;gap:1.1rem}
+.lokasi dt{font-size:.8125rem;font-weight:600;color:var(--laut-teks);margin-bottom:.15rem}
+.lokasi dd{margin:0;color:var(--tinta)}
+.lokasi dd a{color:var(--laut-teks)}
+.jam{margin-top:.25rem;border-top:1px solid var(--garis, #D8DEE4)}
+.jam div{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:.5rem 0;border-bottom:1px solid var(--garis, #D8DEE4);
+  font-size:.95rem;
+}
+.jam div span:last-child{color:var(--abu, #64748B);font-variant-numeric:tabular-nums}
+.peta{border:0;width:100%;aspect-ratio:4/3;background:var(--kabut-tua)}
+.lokasi figure{margin:0 0 1rem}
+.lokasi figure img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 58%}
+
+/* ---------- catatan draf ---------- */
+.draf{
+  border:1.5px dashed var(--kayu-teks);
+  background:#FBF4E9;
+  padding:1.15rem 1.35rem;
+  font-size:.9rem;color:#6E5327;
+  max-width:var(--wrap);margin-inline:auto;
+}
+.draf b{color:#4E3A17}
+
+/* ---------- footer ---------- */
+.ftr{background:var(--tinta);color:#C9DCE4;padding-top:clamp(2.5rem,6vw,3.5rem);padding-bottom:clamp(4.5rem,8vw,5.5rem)}
+.ftr__in{display:grid;gap:2rem}
+@media(min-width:760px){.ftr__in{grid-template-columns:1.3fr 1fr 1fr}}
+.ftr h3{font-size:.8125rem;font-weight:600;color:var(--putih);margin-bottom:.7rem}
+.ftr a{color:#C9DCE4;text-decoration:none}
+.ftr a:hover{color:var(--putih);text-decoration:underline}
+.ftr li{padding:.22rem 0;font-size:.95rem}
+.ftr__brand b{
+  font-family:var(--serif);font-size:1.35rem;font-weight:500;
+  color:var(--putih);display:block;margin-bottom:.4rem;
+}
+.ftr__brand p{font-size:.925rem;max-width:34ch}
+.ftr__bawah{
+  margin-top:2.25rem;padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-size:.8125rem;color:#8FAFBC;
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;
+}
+
+/* ---------- tombol WA melayang ---------- */
+.wa-float{
+  position:fixed;right:1rem;bottom:1rem;z-index:60;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 26px -8px rgba(18,58,92,.6);
+  text-decoration:none;
+  transition:transform .18s ease;
+}
+.wa-float:hover{transform:translateY(-2px)}
+@media(min-width:900px){.wa-float{right:1.5rem;bottom:1.5rem}}
+
+/* ---------- satu gerakan saat halaman dibuka ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:naik .7s cubic-bezier(.22,.7,.3,1) forwards}
+  .reveal:nth-child(2){animation-delay:.09s}
+  .hero__fig{opacity:0;animation:naik .85s cubic-bezier(.22,.7,.3,1) .16s forwards}
+  @keyframes naik{to{opacity:1;transform:none}}
+}
+
+/* ---------- phase-1: open badge / sticky cta / wa composer ---------- */
+.badge-open{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:.8rem;font-weight:700;padding:.32rem .75rem;border-radius:999px;background:#E8F7EE;color:#146C43;margin-bottom:.9rem;border:1px solid #BFE8CF}
+.badge-open::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA753;flex:none}
+.badge-open.is-closed{background:#FDECEC;color:#B02A2A;border-color:#F5C6C6}
+.badge-open.is-closed::before{background:#E03E3E}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--garis, #D8DEE4);backdrop-filter:blur(8px)}
+.cta-bar .btn{flex:1;justify-content:center;padding:.7rem .9rem;font-size:.92rem;margin:0}
+.cta-bar .btn--bar-ghost{background:#fff;border:1px solid var(--garis, #D8DEE4);color:inherit}
+@media(min-width:760px){.cta-bar{display:none}}
+@media(max-width:759px){body{padding-bottom:4.5rem}.wa-float{bottom:4.7rem}}
+.pesan{display:grid;gap:.85rem;margin-top:1.5rem;max-width:38rem}
+.pesan__grid{display:grid;gap:.75rem}
+.pesan__grid--2{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--2{grid-template-columns:1fr 1fr}}
+.pesan__grid--3{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--3{grid-template-columns:1fr 1fr 1fr}}
+.pesan label{display:grid;gap:.3rem;font-size:.8rem;font-weight:700;color:var(--abu, #64748B);text-align:left}
+.pesan input,.pesan select{font:inherit;font-size:.95rem;padding:.6rem .8rem;border:1px solid var(--garis, #D8DEE4);border-radius:10px;background:#fff;color:inherit;width:100%}
+.pesan input:focus-visible,.pesan select:focus-visible{outline:3px solid #94A3B8;outline-offset:2px}
+.pesan__preview{display:none;border:1.5px dashed #CBD5E1;border-radius:12px;background:#F8FAFC;padding:1rem;font-size:.92rem;white-space:pre-line;color:#334155}
+.pesan__preview.show{display:block}
+.pesan__preview .btn{margin-top:.85rem}
+.pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#atas">
+      <img src="assets/logo.svg" alt="Ikon klinik contoh">
+      <b>Klinik Estetika<span>Aesthetic &amp; Anti-Aging</span></b>
+    </a>
+    <nav class="hdr__nav" aria-label="Navigasi utama">
+      <a href="#treatment">Treatment</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="btn btn--wa" href="#" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="atas">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__in">
+      <div>
+        <h1 class="reveal">Rawat kulit Anda<em>di ruang yang tenang.</em></h1>
+        <p class="reveal">Klinik estetika dengan perawatan wajah dan anti-aging yang ditangani langsung oleh dokter, di ruang perawatan yang nyaman.</p>
+        <span class="badge-open" id="open-badge">Cek jam buka…</span>
+        <div class="hero__cta reveal">
+          <a class="btn btn--wa" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Tanya lewat WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#treatment">Lihat treatment</a>
+        </div>
+      </div>
+      <figure class="hero__fig">
+        <img src="assets/ph-hero.jpg" alt="Ruang perawatan klinik (foto contoh)" width="675" height="1200">
+        <figcaption class="hero__tag"><b>Klinik Estetika</b><span>Jakarta — lokasi contoh</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAKTA -->
+  <section class="fakta" aria-label="Ringkasan klinik">
+    <ul>
+      <li>
+        <b>5,0 <span aria-hidden="true" style="color:var(--kayu-teks);font-size:1rem">★★★★★</span></b>
+        <span>contoh tampilan rating</span>
+      </li>
+      <li>
+        <b>Layanan Dokter</b>
+        <span>Ditangani langsung oleh dokter</span>
+      </li>
+      <li>
+        <b>Senin&ndash;Sabtu</b>
+        <span>09.00&ndash;17.00 WIB (contoh)</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TREATMENT -->
+  <section class="section" id="treatment">
+    <div class="wrap">
+      <div class="treat__head">
+        <p class="eyebrow">Layanan</p>
+        <h2 class="h2">Layanan Klinik Estetika</h2>
+        <p class="note"><span class="slot-label">Contoh</span><br>Daftar di bawah ini masih placeholder dan akan diganti dengan layanan asli klinik Anda beserta kisaran harganya.</p>
+      </div>
+
+      <ul class="treat__list">
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Facial &amp; Deep Cleansing</h3>
+          <p class="treat__desc">Membersihkan pori, mengangkat komedo, dan memperbaiki tekstur kulit.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Tanya harga</a>
+        </li>
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Anti-Aging &amp; Peremajaan</h3>
+          <p class="treat__desc">Mengurangi garis halus dan mengencangkan kulit yang mulai kendur.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Tanya harga</a>
+        </li>
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Skin Booster &amp; Infus Vitamin</h3>
+          <p class="treat__desc">Melembapkan kulit dari dalam supaya tampak segar dan sehat.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Tanya harga</a>
+        </li>
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Laser &amp; Peeling</h3>
+          <p class="treat__desc">Menyamarkan flek, bekas jerawat, dan warna kulit yang tidak merata.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Tanya harga</a>
+        </li>
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Botox &amp; Filler</h3>
+          <p class="treat__desc">Menghaluskan kerutan dan menyempurnakan bentuk wajah.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Tanya harga</a>
+        </li>
+        <li class="treat__item">
+          <h3 class="treat__name"><svg width="13" height="17" viewBox="0 0 13 17" aria-hidden="true"><path d="M6.5 0S0 7.2 0 10.6A6.5 6.5 0 0 0 13 10.6C13 7.2 6.5 0 6.5 0Z" fill="#35BBD0"/></svg>Konsultasi Dokter</h3>
+          <p class="treat__desc">Pemeriksaan kondisi kulit dan rencana perawatan yang sesuai.</p>
+          <a class="treat__ask" href="#" target="_blank" rel="noopener">Buat jadwal</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section class="section section--kabut tentang" id="tentang">
+    <div class="wrap tentang__in">
+      <figure>
+        <img src="assets/ph-about.jpg" alt="Area resepsionis klinik (foto contoh)" width="900" height="1200">
+      </figure>
+      <div>
+        <p class="eyebrow">Tentang</p>
+        <h2 class="h2">Klinik kecil di gedung tinggi, ditangani langsung oleh dokter.</h2>
+        <p class="lead">Klinik Estetika adalah klinik contoh di Jakarta. Setiap perawatan diawali pemeriksaan kondisi kulit oleh dokter, dan reservasi dilakukan lewat WhatsApp.</p>
+        <p class="lead">Kirim pesan, sebutkan keluhan kulit Anda, dan tim kami bantu carikan jadwal yang cocok.</p>
+
+        <div class="dokter">
+          <div class="dokter__ava" aria-hidden="true">dr.</div>
+          <div>
+            <span class="slot-label">Placeholder</span>
+            <b>dr. [Nama Dokter]</b>
+            <span>Dokter penanggung jawab &middot; [spesialisasi]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section class="section" id="galeri">
+    <div class="wrap">
+      <p class="eyebrow">Galeri</p>
+      <h2 class="h2">Suasana klinik</h2>
+      <p class="note" style="margin-bottom:2rem">Foto contoh (placeholder) &mdash; bukan foto klinik mana pun.</p>
+      <div class="galeri">
+        <figure><img src="assets/ph-g1.jpg" alt="Staf klinik (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g2.jpg" alt="Ruang tunggu dengan bangku dan cermin besar" loading="lazy"></figure>
+        <figure><img src="assets/ph-g3.jpg" alt="Ruang perawatan dengan kursi recliner dan rak sertifikat" loading="lazy"></figure>
+        <figure><img src="assets/ph-g4.jpg" alt="Ruang tindakan dengan alat perawatan kulit dan kursi putih" loading="lazy"></figure>
+        <figure><img src="assets/ph-g5.jpg" alt="Area wastafel dan lemari kaca berisi sertifikat penghargaan" loading="lazy"></figure>
+        <figure><img src="assets/ph-g6.jpg" alt="Ruang perawatan dengan tempat tidur dan lampu sorot" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ULASAN -->
+  <section class="section section--kabut" id="ulasan">
+    <div class="wrap">
+      <p class="eyebrow">Ulasan</p>
+      <h2 class="h2">Apa kata pasien</h2>
+      <div class="rating" style="margin-top:1.75rem">
+        <div class="rating__num">5,0</div>
+        <div>
+          <div class="rating__bintang" aria-hidden="true">★★★★★</div>
+          <p class="rating__meta">contoh tampilan rating di Google Maps</p>
+        </div>
+      </div>
+      <div class="ulasan">
+        <div class="ulasan__slot">
+          <span class="slot-label">Placeholder</span>
+          <p>Ulasan asli akan ditampilkan di sini, lengkap dengan nama dan tanggalnya.</p>
+        </div>
+        <div class="ulasan__slot">
+          <span class="slot-label">Placeholder</span>
+          <p>Ulasan asli akan ditampilkan di sini, lengkap dengan nama dan tanggalnya.</p>
+        </div>
+        <div class="ulasan__slot">
+          <span class="slot-label">Placeholder</span>
+          <p>Ulasan asli akan ditampilkan di sini, lengkap dengan nama dan tanggalnya.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASI -->
+  <section class="section lokasi" id="lokasi">
+    <div class="wrap lokasi__in">
+      <div>
+        <p class="eyebrow">Lokasi &amp; jam buka</p>
+        <h2 class="h2">Lokasi klinik Anda di sini.</h2>
+        <p class="lead">Teks lokasi contoh &mdash; akan diganti dengan alamat asli klinik Anda.</p>
+
+        <dl>
+          <div>
+            <dt>Alamat</dt>
+            <dd>Alamat contoh<br>Jl. Contoh No. 00, Jakarta<br>Indonesia</dd>
+          </div>
+          <div>
+            <dt>Telepon &amp; WhatsApp</dt>
+            <dd><a href="#">+62 8xx-xxxx-xxxx</a></dd>
+          </div>
+          <div>
+            <dt>Jam buka</dt>
+            <dd>
+              <div class="jam">
+                <div><span>Senin&ndash;Jumat</span><span>09.00&ndash;17.00</span></div>
+                <div><span>Sabtu</span><span>09.00&ndash;17.00</span></div>
+                <div><span>Minggu</span><span>10.00&ndash;14.00</span></div>
+              </div>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="pesan" id="pesan-form">
+  <div class="pesan__grid pesan__grid--2">
+    <label>Nama<input type="text" name="nama" placeholder="Nama Anda" required></label>
+    <label>Pilih layanan<select name="layanan" required><option value="">-- pilih --</option><option>Facial &amp; Deep Cleansing</option><option>Anti-Aging &amp; Peremajaan</option><option>Skin Booster &amp; Infus Vitamin</option><option>Laser &amp; Peeling</option><option>Botox &amp; Filler</option><option>Konsultasi Dokter</option></select></label>
+  </div>
+  <div class="pesan__grid pesan__grid--3">
+    <label>Tanggal<input type="date" name="tanggal" required></label>
+    <label>Jam<input type="time" name="jam" required></label>
+    <label>Catatan (opsional)<input type="text" name="catatan" placeholder="cth: request khusus"></label>
+  </div>
+  <div class="pesan__actions"><button class="btn btn--wa" type="submit">Buat pesan WhatsApp</button></div>
+  <div class="pesan__preview" id="pesan-preview">
+    <p id="pesan-text" style="margin:0"></p>
+    <a class="btn btn--wa" id="pesan-wa-link" href="#" target="_blank" rel="noopener" style="display:none">Buka di WhatsApp</a>
+  </div>
+</form>
+
+        <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--wa" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Buat janji
+          </a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
+        </div>
+      </div>
+
+      <div>
+        <figure>
+          <img src="assets/ph-loc.jpg" alt="Lokasi klinik (foto contoh)" loading="lazy">
+        </figure>
+        <div class="peta" role="img" aria-label="Peta lokasi (contoh)" style="display:grid;place-items:center;background:var(--kabut-tua);color:var(--abu, #64748B);font-size:.9rem;">Peta lokasi (contoh)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATATAN DRAF -->
+  <div class="wrap" style="padding-bottom:clamp(2.5rem,6vw,4rem)">
+    <div class="draf">
+      <b>Catatan: ini contoh tampilan (mockup).</b><br>
+      Semua konten di halaman ini adalah placeholder: nama klinik, alamat, kontak, foto, ulasan, dan daftar treatment. Tidak ada afiliasi dengan klinik mana pun. Halaman ini siap disesuaikan dengan data asli klinik Anda.
+    </div>
+  </div>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <div class="ftr__brand">
+      <b>Klinik Estetika</b>
+      <p>Contoh tampilan website klinik estetika dan anti-aging. Bukan klinik nyata.</p>
+    </div>
+    <div>
+      <h3>Kontak</h3>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#">+62 8xx-xxxx-xxxx</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Media sosial</h3>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr__bawah">
+    <span>&copy; 2026 Klinik Estetika (contoh)</span>
+    <span>Website oleh Ibrahim Nurjasman Nugroho</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Hubungi klinik lewat WhatsApp (contoh)">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+</a>
+
+<div class="cta-bar" aria-label="Aksi cepat">
+  <a class="btn btn--wa" href="#lokasi">Booking</a>
+  <a class="btn btn--bar-ghost" href="#">WhatsApp</a>
+</div>
+
+<script>
+// Demo notice for placeholder buttons
+function demoNotice() {
+  alert('Ini halaman demo. Tombol ini akan terhubung ke WhatsApp / tautan resmi klinik Anda.');
+}
+
+document.addEventListener('click', function (e) {
+  const a = e.target.closest('a[href="#"]');
+  if (a) {
+    e.preventDefault();
+    demoNotice();
+  }
+});
+</script>
+
+<script>
+(function(){
+  var CFG = {name: "Klinik Estetika", hours: [[10,14],[9,17],[9,17],[9,17],[9,17],[9,17],[9,17]]};
+  function updateBadge(){
+    var el = document.getElementById('open-badge');
+    if(!el) return;
+    var now = new Date();
+    var r = CFG.hours[now.getDay()];
+    var h = now.getHours() + now.getMinutes() / 60;
+    var open = !!(r && h >= r[0] && h < r[1]);
+    el.textContent = open ? 'Buka sekarang' : 'Sedang tutup';
+    el.classList.toggle('is-closed', !open);
+  }
+  updateBadge(); setInterval(updateBadge, 60000);
+
+  var form = document.getElementById('pesan-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      function g(n){ var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; }
+      var nama = g('nama'), layanan = g('layanan'), tanggal = g('tanggal'), jam = g('jam'), catatan = g('catatan');
+      
+      var msg = 'Halo ' + CFG.name + '!\n\nSaya ' + nama + '.\nIngin booking: ' + layanan + '\nTanggal: ' + tanggal + '\nJam: ' + jam;
+      if(catatan){ msg += '\nCatatan: ' + catatan; }
+      msg += '\n\nTerima kasih.';
+      var box = document.getElementById('pesan-preview');
+      document.getElementById('pesan-text').textContent = msg + '\n\n(Demo: tombol di bawah mensimulasikan alur asli. Saat live, pesan langsung mengarah ke WhatsApp resmi usaha Anda.)';
+      var wa = document.getElementById('pesan-wa-link');
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      wa.style.display = 'inline-flex';
+      box.classList.add('show');
+      box.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+})();
+</script>
+</body>
+</html>

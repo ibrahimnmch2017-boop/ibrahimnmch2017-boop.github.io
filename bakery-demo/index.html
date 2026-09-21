@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dapur Manis — Bakery &amp; Custom Cake (Contoh Website)</title>
+<meta name="description" content="Contoh website toko kue: katalog produk, custom cake, dan pemesanan. Halaman contoh, bukan usaha nyata.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --rose:#B45A72;
+  --rose-tua:#93465C;
+  --pink:#F7E4E8;
+  --pink-tua:#EFCDD5;
+  --krem:#FFF9F6;
+  --coklat:#4A3630;
+  --coklat-tua:#382723;
+  --abu:#957C76;
+  --garis:#EFDFDC;
+  --putih:#FFFFFF;
+  --display:"DM Serif Display",Georgia,serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1120px;
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--krem);color:var(--coklat);font-family:var(--sans);font-size:clamp(1rem,.97rem + .15vw,1.0625rem);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,ul,dl,dd{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(3.5rem,9vw,6.5rem)}
+.section--pink{background:var(--pink)}
+.eyebrow{font-size:.8125rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:.6rem}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,1.3rem + 2.4vw,2.9rem);line-height:1.15;letter-spacing:-.01em}
+.lead{color:var(--abu, #64748B);max-width:56ch;margin-top:.85rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;font-size:.98rem;padding:.85rem 1.5rem;border-radius:999px;text-decoration:none;border:2px solid transparent;transition:all .18s ease}
+.btn--rose{background:var(--rose);color:var(--putih)}
+.btn--rose:hover{background:var(--rose-tua)}
+.btn--ghost{border-color:var(--pink-tua);color:var(--coklat);background:var(--putih)}
+.btn--ghost:hover{border-color:var(--rose);color:var(--rose)}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,249,246,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis, #D8DEE4)}
+.hdr__in{max-width:var(--wrap);margin-inline:auto;padding:.7rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand__mark{width:40px;height:40px;flex:none;border-radius:50%;background:var(--rose);display:grid;place-items:center}
+.brand b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.05;display:block}
+.brand span{display:block;font-weight:700;font-size:.7rem;color:var(--abu, #64748B);letter-spacing:.1em;text-transform:uppercase}
+.hdr__nav{display:none;gap:1.6rem;font-size:.95rem;font-weight:700}
+.hdr__nav a{text-decoration:none;color:var(--abu, #64748B)}
+.hdr__nav a:hover{color:var(--rose)}
+@media(min-width:940px){.hdr__nav{display:flex}}
+.hdr .btn{padding:.6rem 1.1rem;font-size:.88rem}
+.hero{background:var(--pink);overflow:hidden}
+.hero__in{max-width:var(--wrap);margin-inline:auto;padding:clamp(2.5rem,7vw,4.5rem) var(--pad) 0;display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.hero__in{grid-template-columns:1.05fr .95fr;align-items:center;padding-bottom:clamp(2.5rem,7vw,4.5rem)}}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.5rem,1.3rem + 5.2vw,4.3rem);line-height:1.06}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero p{color:#8A6E68;margin-top:1.35rem;max-width:46ch;font-size:1.05rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media(max-width:520px){.hero__cta{flex-direction:column;align-items:stretch}.hero__cta .btn{justify-content:center}}
+.hero__fig{position:relative;margin:0}
+.hero__fig img{width:100%;aspect-ratio:4/5;max-height:min(64vh,560px);object-fit:cover;border-radius:180px 180px 12px 12px}
+@media(min-width:900px){.hero__fig img{aspect-ratio:auto;height:clamp(420px,66vh,600px);max-height:none}}
+.hero__tag{position:absolute;left:0;bottom:1.4rem;background:var(--putih);padding:.7rem 1.1rem .75rem;border-radius:10px;font-size:.875rem;line-height:1.4;max-width:16rem;box-shadow:0 10px 30px -18px rgba(74,54,48,.5)}
+.hero__tag b{display:block;font-weight:800;color:var(--rose)}
+.hero__tag span{color:var(--abu, #64748B)}
+.fakta{background:var(--putih);border-block:1px solid var(--garis, #D8DEE4)}
+.fakta ul{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);display:grid}
+@media(min-width:760px){.fakta ul{grid-template-columns:repeat(3,1fr)}}
+.fakta li{padding:1.35rem 0;border-bottom:1px solid var(--garis, #D8DEE4)}
+.fakta li:last-child{border-bottom:0}
+@media(min-width:760px){.fakta li{border-bottom:0;border-right:1px solid var(--garis, #D8DEE4);padding:1.6rem 1.75rem}.fakta li:first-child{padding-left:0}.fakta li:last-child{border-right:0}}
+.fakta b{display:block;font-family:var(--display);font-weight:400;font-size:1.4rem;line-height:1.2}
+.fakta span{display:block;font-size:.875rem;color:var(--abu, #64748B);margin-top:.15rem}
+.katalog{display:grid;gap:1.1rem}
+@media(min-width:700px){.katalog{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.katalog{grid-template-columns:repeat(3,1fr)}}
+.kartu{background:var(--putih);border:1px solid var(--garis, #D8DEE4);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .2s ease,box-shadow .2s ease}
+.kartu:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(180,90,114,.35)}
+.kartu__tag{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--rose);background:var(--pink);padding:.2rem .6rem;border-radius:999px;margin-bottom:.35rem}
+.kartu h3{font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.25}
+.kartu p{color:var(--abu, #64748B);font-size:.93rem;flex:1}
+.kartu__harga{font-weight:800;color:var(--coklat)}
+.kartu__aksi{margin-top:.5rem}
+.cerita__in{display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.cerita__in{grid-template-columns:.95fr 1.05fr;align-items:center}}
+.cerita img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}
+.cerita p + p{margin-top:1rem}
+.langkah{display:grid;gap:1rem;margin-top:2rem;counter-reset:langkah}
+@media(min-width:760px){.langkah{grid-template-columns:repeat(3,1fr)}}
+.langkah li{background:var(--putih);border:1px solid var(--garis, #D8DEE4);border-radius:14px;padding:1.35rem;display:flex;gap:.9rem;align-items:flex-start}
+.langkah li::before{counter-increment:langkah;content:counter(langkah);flex:none;width:32px;height:32px;border-radius:50%;background:var(--rose);color:var(--putih);display:grid;place-items:center;font-weight:800;font-size:.9rem}
+.langkah b{display:block}
+.langkah span{color:var(--abu, #64748B);font-size:.9rem}
+.galeri{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.galeri figure{margin:0;overflow:hidden;aspect-ratio:1;border-radius:12px}
+.galeri img{width:100%;height:100%;object-fit:cover}
+@media(min-width:760px){.galeri{grid-template-columns:repeat(4,1fr)}}
+.lokasi__in{display:grid;gap:clamp(2rem,5vw,3rem)}
+@media(min-width:900px){.lokasi__in{grid-template-columns:1fr 1fr;align-items:start}}
+.lokasi dl{margin:1.75rem 0 0;display:grid;gap:1.1rem}
+.lokasi dt{font-size:.8125rem;font-weight:800;color:var(--rose);margin-bottom:.15rem}
+.lokasi dd a{color:var(--rose)}
+.jam{margin-top:.25rem;border-top:1px solid var(--garis, #D8DEE4)}
+.jam div{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--garis, #D8DEE4);font-size:.95rem}
+.jam div span:last-child{color:var(--abu, #64748B);font-variant-numeric:tabular-nums}
+.peta{border:1.5px dashed var(--pink-tua);border-radius:14px;min-height:280px;display:grid;place-items:center;background:var(--putih);color:var(--abu, #64748B);font-size:.9rem}
+.draf{border:1.5px dashed var(--rose);background:#FDF0F3;padding:1.15rem 1.35rem;font-size:.9rem;color:#7A4152;max-width:var(--wrap);margin-inline:auto;border-radius:10px}
+.draf b{color:#5C2E3C}
+.ftr{background:var(--coklat-tua);color:#D9C7C1;padding-top:clamp(2.5rem,6vw,3.5rem);padding-bottom:clamp(4.5rem,8vw,5.5rem)}
+.ftr__in{display:grid;gap:2rem}
+@media(min-width:760px){.ftr__in{grid-template-columns:1.3fr 1fr 1fr}}
+.ftr h3{font-size:.8125rem;font-weight:800;color:var(--putih);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.1em}
+.ftr a{color:#D9C7C1;text-decoration:none}
+.ftr a:hover{color:var(--putih);text-decoration:underline}
+.ftr li{padding:.22rem 0;font-size:.95rem}
+.ftr__brand b{font-family:var(--display);font-size:1.5rem;font-weight:400;color:var(--putih);display:block;margin-bottom:.4rem}
+.ftr__brand p{font-size:.925rem;max-width:34ch}
+.ftr__bawah{margin-top:2.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.14);font-size:.8125rem;color:#B99F98;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
+.wa-float{position:fixed;right:1rem;bottom:1rem;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(74,54,48,.6);text-decoration:none;transition:transform .18s ease}
+.wa-float:hover{transform:translateY(-2px)}
+@media(min-width:900px){.wa-float{right:1.5rem;bottom:1.5rem}}
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:naik .7s cubic-bezier(.22,.7,.3,1) forwards}
+  .hero__fig{opacity:0;animation:naik .85s cubic-bezier(.22,.7,.3,1) .16s forwards}
+  @keyframes naik{to{opacity:1;transform:none}}
+}
+
+/* ---------- phase-1: open badge / sticky cta / wa composer ---------- */
+.badge-open{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:.8rem;font-weight:700;padding:.32rem .75rem;border-radius:999px;background:#E8F7EE;color:#146C43;margin-bottom:.9rem;border:1px solid #BFE8CF}
+.badge-open::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA753;flex:none}
+.badge-open.is-closed{background:#FDECEC;color:#B02A2A;border-color:#F5C6C6}
+.badge-open.is-closed::before{background:#E03E3E}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--garis, #D8DEE4);backdrop-filter:blur(8px)}
+.cta-bar .btn{flex:1;justify-content:center;padding:.7rem .9rem;font-size:.92rem;margin:0}
+.cta-bar .btn--bar-ghost{background:#fff;border:1px solid var(--garis, #D8DEE4);color:inherit}
+@media(min-width:760px){.cta-bar{display:none}}
+@media(max-width:759px){body{padding-bottom:4.5rem}.wa-float{bottom:4.7rem}}
+.pesan{display:grid;gap:.85rem;margin-top:1.5rem;max-width:38rem}
+.pesan__grid{display:grid;gap:.75rem}
+.pesan__grid--2{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--2{grid-template-columns:1fr 1fr}}
+.pesan__grid--3{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--3{grid-template-columns:1fr 1fr 1fr}}
+.pesan label{display:grid;gap:.3rem;font-size:.8rem;font-weight:700;color:var(--abu, #64748B);text-align:left}
+.pesan input,.pesan select{font:inherit;font-size:.95rem;padding:.6rem .8rem;border:1px solid var(--garis, #D8DEE4);border-radius:10px;background:#fff;color:inherit;width:100%}
+.pesan input:focus-visible,.pesan select:focus-visible{outline:3px solid #94A3B8;outline-offset:2px}
+.pesan__preview{display:none;border:1.5px dashed #CBD5E1;border-radius:12px;background:#F8FAFC;padding:1rem;font-size:.92rem;white-space:pre-line;color:#334155}
+.pesan__preview.show{display:block}
+.pesan__preview .btn{margin-top:.85rem}
+.pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#atas">
+      <span class="brand__mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF9F6" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c3.5 2.5 6 5.5 6 9a6 6 0 0 1-12 0c0-3.5 2.5-6.5 6-9Z"/><path d="M4 21h16"/></svg></span>
+      <b>Dapur Manis<span>Bakery &amp; Custom Cake — Contoh</span></b>
+    </a>
+    <nav class="hdr__nav" aria-label="Navigasi utama">
+      <a href="#katalog">Katalog</a>
+      <a href="#cerita">Cerita</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Pesan</a>
+    </nav>
+    <a class="btn btn--rose" href="#" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+      Pesan sekarang
+    </a>
+  </div>
+</header>
+
+<main id="atas">
+
+  <section class="hero">
+    <div class="hero__in">
+      <div>
+        <h1 class="reveal">Kue hangat,<em>dibuat dengan cinta.</em></h1>
+        <p class="reveal">Bakery rumahan dengan bahan premium, dipanggang segar setiap hari. Tersedia kue harian, hampers, dan custom cake untuk momen spesial Anda.</p>
+        <span class="badge-open" id="open-badge">Cek jam buka…</span>
+        <div class="hero__cta reveal">
+          <a class="btn btn--rose" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Pesan via WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#katalog">Lihat katalog</a>
+        </div>
+      </div>
+      <figure class="hero__fig">
+        <img src="assets/ph-hero.jpg" alt="Kue-kue di etalase (foto contoh)" width="900" height="1200">
+        <figcaption class="hero__tag"><b>Panggang segar tiap hari</b><span>Pre-order untuk custom cake</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fakta" aria-label="Ringkasan toko kue">
+    <ul>
+      <li>
+        <b>Bahan Premium</b>
+        <span>Butter, cokelat, dan buah pilihan</span>
+      </li>
+      <li>
+        <b>Custom Cake</b>
+        <span>Desain sesuai tema acara Anda</span>
+      </li>
+      <li>
+        <b>Pickup &amp; Delivery</b>
+        <span>Pesan H-2 untuk pengiriman</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="katalog">
+    <div class="wrap">
+      <p class="eyebrow">Katalog</p>
+      <h2 class="h2">Pilihan favorit</h2>
+      <p class="lead" style="margin-bottom:2rem">Daftar di bawah ini contoh &mdash; akan diganti dengan produk dan harga asli toko Anda.</p>
+
+      <div class="katalog">
+        <article class="kartu">
+          <span class="kartu__tag">Kue Harian</span>
+          <h3>Bolu Pandan Keju</h3>
+          <p>Bolu lembut rasa pandan dengan taburan keju melimpah. Tersedia potongan dan loyang penuh.</p>
+          <span class="kartu__harga">Rp 35.000 / potong</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Pesan</a>
+        </article>
+        <article class="kartu">
+          <span class="kartu__tag">Kue Harian</span>
+          <h3>Brownies Fudgy</h3>
+          <p>Brownies cokelat pekat dengan tekstur fudgy, dipanggang setiap pagi.</p>
+          <span class="kartu__harga">Rp 45.000 / box</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Pesan</a>
+        </article>
+        <article class="kartu">
+          <span class="kartu__tag">Custom</span>
+          <h3>Custom Cake Ulang Tahun</h3>
+          <p>Desain dan rasa sesuai permintaan. Pre-order minimal H-2 sebelum acara.</p>
+          <span class="kartu__harga">Mulai Rp 250.000</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Konsultasi desain</a>
+        </article>
+        <article class="kartu">
+          <span class="kartu__tag">Hampers</span>
+          <h3>Hampers Kue Kering</h3>
+          <p>Paket kue kering cantik untuk hari raya, ucapan terima kasih, dan hadiah kantor.</p>
+          <span class="kartu__harga">Rp 150.000 / paket</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Pesan</a>
+        </article>
+        <article class="kartu">
+          <span class="kartu__tag">Slice</span>
+          <h3>Cheesecake Slice</h3>
+          <p>Cheesecake lembut dengan topping buah segar atau saus karamel.</p>
+          <span class="kartu__harga">Rp 40.000 / slice</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Pesan</a>
+        </article>
+        <article class="kartu">
+          <span class="kartu__tag">Minuman</span>
+          <h3>Kopi Susu Botol</h3>
+          <p>Pendamping sempurna untuk kue Anda. Tersedia botol 250ml.</p>
+          <span class="kartu__harga">Rp 20.000 / botol</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Pesan</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--pink cerita" id="cerita">
+    <div class="wrap cerita__in">
+      <figure>
+        <img src="assets/ph-about.jpg" alt="Proses memanggang kue (foto contoh)" width="1000" height="750">
+      </figure>
+      <div>
+        <p class="eyebrow">Cerita kami</p>
+        <h2 class="h2">Dari dapur kecil, untuk momen besar Anda.</h2>
+        <p class="lead">Dapur Manis adalah toko kue contoh. Berawal dari hobi memanggang untuk keluarga, kini melayani pesanan kue harian hingga custom cake untuk berbagai acara.</p>
+        <p class="lead">Setiap kue dibuat dalam batch kecil agar kualitas dan kesegarannya terjaga.</p>
+
+        <h3 class="h2" style="font-size:1.3rem;margin-top:1.75rem">Cara pesan</h3>
+        <ol class="langkah">
+          <li><div><b>Pilih kue</b><span>Lihat katalog atau konsultasi desain custom</span></div></li>
+          <li><div><b>Chat WhatsApp</b><span>Konfirmasi rasa, ukuran, dan tanggal</span></div></li>
+          <li><div><b>Ambil / kirim</b><span>Pickup di toko atau delivery ke alamat Anda</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeri">
+    <div class="wrap">
+      <p class="eyebrow">Galeri</p>
+      <h2 class="h2">Hasil karya</h2>
+      <p class="lead" style="margin-bottom:2rem">Foto contoh (placeholder) &mdash; bukan foto usaha mana pun.</p>
+      <div class="galeri">
+        <figure><img src="assets/ph-g1.jpg" alt="Kue tart buah (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g2.jpg" alt="Kue ulang tahun custom (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g3.jpg" alt="Kue kering dalam toples (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g4.jpg" alt="Meja display kue (foto contoh)" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--pink lokasi" id="lokasi">
+    <div class="wrap lokasi__in">
+      <div>
+        <p class="eyebrow">Pesan &amp; kunjungi</p>
+        <h2 class="h2">Toko Anda di sini.</h2>
+        <p class="lead">Teks lokasi contoh &mdash; akan diganti dengan alamat asli toko Anda.</p>
+
+        <dl>
+          <div>
+            <dt>Alamat</dt>
+            <dd>Alamat contoh<br>Jl. Contoh No. 00, Jakarta<br>Indonesia</dd>
+          </div>
+          <div>
+            <dt>Telepon &amp; WhatsApp</dt>
+            <dd><a href="#">+62 8xx-xxxx-xxxx</a></dd>
+          </div>
+          <div>
+            <dt>Jam buka</dt>
+            <dd>
+              <div class="jam">
+                <div><span>Senin&ndash;Sabtu</span><span>08.00&ndash;20.00</span></div>
+                <div><span>Minggu</span><span>08.00&ndash;14.00</span></div>
+              </div>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="pesan" id="pesan-form">
+  <div class="pesan__grid pesan__grid--2">
+    <label>Nama<input type="text" name="nama" placeholder="Nama Anda" required></label>
+    <label>Pilih layanan<select name="layanan" required><option value="">-- pilih --</option><option>Bolu Pandan Keju</option><option>Brownies Fudgy</option><option>Custom Cake Ulang Tahun</option><option>Hampers Kue Kering</option><option>Cheesecake Slice</option><option>Kopi Susu Botol</option></select></label>
+  </div>
+  <div class="pesan__grid pesan__grid--3">
+    <label>Tanggal<input type="date" name="tanggal" required></label>
+    <label>Jam<input type="time" name="jam" required></label>
+    <label>Catatan (opsional)<input type="text" name="catatan" placeholder="cth: request khusus"></label>
+  </div>
+  <div class="pesan__actions"><button class="btn btn--rose" type="submit">Buat pesan WhatsApp</button></div>
+  <div class="pesan__preview" id="pesan-preview">
+    <p id="pesan-text" style="margin:0"></p>
+    <a class="btn btn--rose" id="pesan-wa-link" href="#" target="_blank" rel="noopener" style="display:none">Buka di WhatsApp</a>
+  </div>
+</form>
+
+        <div style="margin-top:1.75rem">
+          <a class="btn btn--rose" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="peta" role="img" aria-label="Peta lokasi (contoh)">Peta lokasi (contoh)</div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:clamp(2.5rem,6vw,4rem)">
+    <div class="draf">
+      <b>Catatan: ini contoh tampilan (mockup).</b><br>
+      Semua konten di halaman ini adalah placeholder: nama toko, alamat, kontak, foto, dan harga. Tidak ada afiliasi dengan usaha mana pun. Halaman ini siap disesuaikan dengan data asli toko Anda.
+    </div>
+  </div>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <div class="ftr__brand">
+      <b>Dapur Manis</b>
+      <p>Contoh tampilan website toko kue. Bukan usaha nyata.</p>
+    </div>
+    <div>
+      <h3>Kontak</h3>
+      <ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">+62 8xx-xxxx-xxxx</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#katalog">Katalog</a></li>
+        <li><a href="#cerita">Cerita kami</a></li>
+        <li><a href="#lokasi">Pesan</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr__bawah">
+    <span>&copy; 2026 Dapur Manis (contoh)</span>
+    <span>Website oleh Ibrahim Nurjasman Nugroho</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Hubungi toko lewat WhatsApp (contoh)">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+</a>
+
+<div class="cta-bar" aria-label="Aksi cepat">
+  <a class="btn btn--rose" href="#lokasi">Booking</a>
+  <a class="btn btn--bar-ghost" href="#">WhatsApp</a>
+</div>
+
+<script>
+function demoNotice(){alert('Ini halaman demo. Tombol ini akan terhubung ke WhatsApp / tautan resmi usaha Anda.');}
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href="#"]');
+  if(a){ e.preventDefault(); demoNotice(); }
+});
+</script>
+
+<script>
+(function(){
+  var CFG = {name: "Dapur Manis", hours: [[8,14],[8,20],[8,20],[8,20],[8,20],[8,20],[8,20]]};
+  function updateBadge(){
+    var el = document.getElementById('open-badge');
+    if(!el) return;
+    var now = new Date();
+    var r = CFG.hours[now.getDay()];
+    var h = now.getHours() + now.getMinutes() / 60;
+    var open = !!(r && h >= r[0] && h < r[1]);
+    el.textContent = open ? 'Buka sekarang' : 'Sedang tutup';
+    el.classList.toggle('is-closed', !open);
+  }
+  updateBadge(); setInterval(updateBadge, 60000);
+
+  var form = document.getElementById('pesan-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      function g(n){ var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; }
+      var nama = g('nama'), layanan = g('layanan'), tanggal = g('tanggal'), jam = g('jam'), catatan = g('catatan');
+      
+      var msg = 'Halo ' + CFG.name + '!\n\nSaya ' + nama + '.\nIngin booking: ' + layanan + '\nTanggal: ' + tanggal + '\nJam: ' + jam;
+      if(catatan){ msg += '\nCatatan: ' + catatan; }
+      msg += '\n\nTerima kasih.';
+      var box = document.getElementById('pesan-preview');
+      document.getElementById('pesan-text').textContent = msg + '\n\n(Demo: tombol di bawah mensimulasikan alur asli. Saat live, pesan langsung mengarah ke WhatsApp resmi usaha Anda.)';
+      var wa = document.getElementById('pesan-wa-link');
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      wa.style.display = 'inline-flex';
+      box.classList.add('show');
+      box.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+})();
+</script>
+</body>
+</html>

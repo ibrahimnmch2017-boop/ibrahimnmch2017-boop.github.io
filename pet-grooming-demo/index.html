@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paw &amp; Care — Pet Grooming &amp; Penitipan (Contoh Website)</title>
+<meta name="description" content="Contoh website pet grooming: layanan grooming, penitipan, harga, dan booking. Halaman contoh, bukan usaha nyata.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --toska:#1F8A7D;
+  --toska-tua:#16695F;
+  --mint:#E4F5F0;
+  --mint-tua:#C8E8DF;
+  --kuning:#F6B93B;
+  --kuning-tua:#D89B22;
+  --tinta:#14332E;
+  --abu:#5F7A74;
+  --garis:#D8EAE4;
+  --putih:#FFFFFF;
+  --display:"Baloo 2",system-ui,sans-serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1120px;
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#F7FCFA;color:var(--tinta);font-family:var(--sans);font-size:clamp(1rem,.97rem + .15vw,1.0625rem);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,ul,dl,dd{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--toska);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(3.5rem,9vw,6.5rem)}
+.section--mint{background:var(--mint)}
+.eyebrow{font-family:var(--display);font-size:.9375rem;font-weight:700;letter-spacing:.06em;color:var(--toska-tua);margin-bottom:.5rem}
+.h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,1.3rem + 2.4vw,2.9rem);line-height:1.12;letter-spacing:-.01em}
+.lead{color:var(--abu, #64748B);max-width:56ch;margin-top:.85rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:.98rem;padding:.9rem 1.55rem;border-radius:999px;text-decoration:none;border:2px solid transparent;transition:all .18s ease}
+.btn--toska{background:var(--toska);color:var(--putih)}
+.btn--toska:hover{background:var(--toska-tua)}
+.btn--ghost{border-color:var(--mint-tua);color:var(--tinta);background:var(--putih)}
+.btn--ghost:hover{border-color:var(--toska);color:var(--toska)}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(247,252,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis, #D8DEE4)}
+.hdr__in{max-width:var(--wrap);margin-inline:auto;padding:.7rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand__mark{width:40px;height:40px;flex:none;border-radius:50%;background:var(--toska);display:grid;place-items:center}
+.brand b{font-family:var(--display);font-weight:800;font-size:1.3rem;line-height:1.05;display:block}
+.brand span{display:block;font-weight:600;font-size:.7rem;color:var(--abu, #64748B);letter-spacing:.06em}
+.hdr__nav{display:none;gap:1.6rem;font-size:.95rem;font-weight:700}
+.hdr__nav a{text-decoration:none;color:var(--abu, #64748B)}
+.hdr__nav a:hover{color:var(--toska)}
+@media(min-width:940px){.hdr__nav{display:flex}}
+.hdr .btn{padding:.6rem 1.1rem;font-size:.88rem}
+.hero{background:var(--mint);overflow:hidden}
+.hero__in{max-width:var(--wrap);margin-inline:auto;padding:clamp(2.5rem,7vw,4.5rem) var(--pad) 0;display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.hero__in{grid-template-columns:1.05fr .95fr;align-items:center;padding-bottom:clamp(2.5rem,7vw,4.5rem)}}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,1.3rem + 5vw,4.1rem);line-height:1.08}
+.hero h1 em{font-style:normal;color:var(--toska)}
+.hero p{color:#4E6B65;margin-top:1.35rem;max-width:46ch;font-size:1.05rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media(max-width:520px){.hero__cta{flex-direction:column;align-items:stretch}.hero__cta .btn{justify-content:center}}
+.hero__fig{position:relative;margin:0}
+.hero__fig img{width:100%;aspect-ratio:4/5;max-height:min(64vh,560px);object-fit:cover;border-radius:24px}
+@media(min-width:900px){.hero__fig img{aspect-ratio:auto;height:clamp(420px,66vh,600px);max-height:none}}
+.hero__tag{position:absolute;left:0;bottom:1.4rem;background:var(--putih);padding:.7rem 1.1rem .75rem;border-radius:14px;font-size:.875rem;line-height:1.4;max-width:17rem;box-shadow:0 10px 30px -18px rgba(20,51,46,.4)}
+.hero__tag b{display:block;font-weight:800;color:var(--toska)}
+.hero__tag span{color:var(--abu, #64748B)}
+.fakta{background:var(--putih);border-block:1px solid var(--garis, #D8DEE4)}
+.fakta ul{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);display:grid}
+@media(min-width:760px){.fakta ul{grid-template-columns:repeat(3,1fr)}}
+.fakta li{padding:1.35rem 0;border-bottom:1px solid var(--garis, #D8DEE4)}
+.fakta li:last-child{border-bottom:0}
+@media(min-width:760px){.fakta li{border-bottom:0;border-right:1px solid var(--garis, #D8DEE4);padding:1.6rem 1.75rem}.fakta li:first-child{padding-left:0}.fakta li:last-child{border-right:0}}
+.fakta b{display:block;font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1.2}
+.fakta span{display:block;font-size:.875rem;color:var(--abu, #64748B);margin-top:.15rem}
+.layanan{display:grid;gap:1.1rem}
+@media(min-width:700px){.layanan{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.layanan{grid-template-columns:repeat(3,1fr)}}
+.kartu{background:var(--putih);border:1px solid var(--garis, #D8DEE4);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .2s ease,box-shadow .2s ease}
+.kartu:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(31,138,125,.3)}
+.kartu h3{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.25}
+.kartu p{color:var(--abu, #64748B);font-size:.93rem;flex:1}
+.kartu__harga{font-weight:800;color:var(--toska-tua)}
+.kartu__aksi{margin-top:.5rem}
+.fasilitas{display:grid;gap:.75rem;margin-top:2rem}
+@media(min-width:760px){.fasilitas{grid-template-columns:repeat(3,1fr)}}
+.fasilitas li{background:var(--putih);border:1px solid var(--garis, #D8DEE4);border-radius:16px;padding:1.35rem;display:flex;gap:.9rem;align-items:flex-start}
+.fasilitas b{display:block}
+.fasilitas span{color:var(--abu, #64748B);font-size:.9rem}
+.tentang__in{display:grid;gap:clamp(2rem,5vw,3.5rem)}
+@media(min-width:900px){.tentang__in{grid-template-columns:.95fr 1.05fr;align-items:center}}
+.tentang img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}
+.tentang p + p{margin-top:1rem}
+.galeri{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.galeri figure{margin:0;overflow:hidden;aspect-ratio:1;border-radius:16px}
+.galeri img{width:100%;height:100%;object-fit:cover}
+@media(min-width:760px){.galeri{grid-template-columns:repeat(4,1fr)}}
+.lokasi__in{display:grid;gap:clamp(2rem,5vw,3rem)}
+@media(min-width:900px){.lokasi__in{grid-template-columns:1fr 1fr;align-items:start}}
+.lokasi dl{margin:1.75rem 0 0;display:grid;gap:1.1rem}
+.lokasi dt{font-size:.8125rem;font-weight:800;color:var(--toska-tua);margin-bottom:.15rem}
+.lokasi dd a{color:var(--toska-tua)}
+.jam{margin-top:.25rem;border-top:1px solid var(--garis, #D8DEE4)}
+.jam div{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--garis, #D8DEE4);font-size:.95rem}
+.jam div span:last-child{color:var(--abu, #64748B);font-variant-numeric:tabular-nums}
+.peta{border:1.5px dashed var(--mint-tua);border-radius:18px;min-height:280px;display:grid;place-items:center;background:var(--putih);color:var(--abu, #64748B);font-size:.9rem}
+.draf{border:1.5px dashed var(--toska);background:#EDF9F5;padding:1.15rem 1.35rem;font-size:.9rem;color:#1B5A50;max-width:var(--wrap);margin-inline:auto;border-radius:12px}
+.draf b{color:#0F3E37}
+.ftr{background:#0F2A26;color:#9DBDB6;padding-top:clamp(2.5rem,6vw,3.5rem);padding-bottom:clamp(4.5rem,8vw,5.5rem)}
+.ftr__in{display:grid;gap:2rem}
+@media(min-width:760px){.ftr__in{grid-template-columns:1.3fr 1fr 1fr}}
+.ftr h3{font-family:var(--display);font-size:.9rem;font-weight:700;color:var(--kuning);margin-bottom:.7rem}
+.ftr a{color:#9DBDB6;text-decoration:none}
+.ftr a:hover{color:var(--putih);text-decoration:underline}
+.ftr li{padding:.22rem 0;font-size:.95rem}
+.ftr__brand b{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--putih);display:block;margin-bottom:.4rem}
+.ftr__brand p{font-size:.925rem;max-width:34ch}
+.ftr__bawah{margin-top:2.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.12);font-size:.8125rem;color:#729A92;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
+.wa-float{position:fixed;right:1rem;bottom:1rem;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(20,51,46,.5);text-decoration:none;transition:transform .18s ease}
+.wa-float:hover{transform:translateY(-2px)}
+@media(min-width:900px){.wa-float{right:1.5rem;bottom:1.5rem}}
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:naik .7s cubic-bezier(.22,.7,.3,1) forwards}
+  .hero__fig{opacity:0;animation:naik .85s cubic-bezier(.22,.7,.3,1) .16s forwards}
+  @keyframes naik{to{opacity:1;transform:none}}
+}
+
+/* ---------- phase-1: open badge / sticky cta / wa composer ---------- */
+.badge-open{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:.8rem;font-weight:700;padding:.32rem .75rem;border-radius:999px;background:#E8F7EE;color:#146C43;margin-bottom:.9rem;border:1px solid #BFE8CF}
+.badge-open::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA753;flex:none}
+.badge-open.is-closed{background:#FDECEC;color:#B02A2A;border-color:#F5C6C6}
+.badge-open.is-closed::before{background:#E03E3E}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--garis, #D8DEE4);backdrop-filter:blur(8px)}
+.cta-bar .btn{flex:1;justify-content:center;padding:.7rem .9rem;font-size:.92rem;margin:0}
+.cta-bar .btn--bar-ghost{background:#fff;border:1px solid var(--garis, #D8DEE4);color:inherit}
+@media(min-width:760px){.cta-bar{display:none}}
+@media(max-width:759px){body{padding-bottom:4.5rem}.wa-float{bottom:4.7rem}}
+.pesan{display:grid;gap:.85rem;margin-top:1.5rem;max-width:38rem}
+.pesan__grid{display:grid;gap:.75rem}
+.pesan__grid--2{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--2{grid-template-columns:1fr 1fr}}
+.pesan__grid--3{grid-template-columns:1fr}
+@media(min-width:560px){.pesan__grid--3{grid-template-columns:1fr 1fr 1fr}}
+.pesan label{display:grid;gap:.3rem;font-size:.8rem;font-weight:700;color:var(--abu, #64748B);text-align:left}
+.pesan input,.pesan select{font:inherit;font-size:.95rem;padding:.6rem .8rem;border:1px solid var(--garis, #D8DEE4);border-radius:10px;background:#fff;color:inherit;width:100%}
+.pesan input:focus-visible,.pesan select:focus-visible{outline:3px solid #94A3B8;outline-offset:2px}
+.pesan__preview{display:none;border:1.5px dashed #CBD5E1;border-radius:12px;background:#F8FAFC;padding:1rem;font-size:.92rem;white-space:pre-line;color:#334155}
+.pesan__preview.show{display:block}
+.pesan__preview .btn{margin-top:.85rem}
+.pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#atas">
+      <span class="brand__mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7FCFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7.5" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17" cy="7.5" r="2.2"/><path d="M12 11.5c-2.6 0-4.5 2-4.5 4.2 0 1.6 1.2 2.8 2.8 2.8 1 0 1.7-.5 1.7-.5s.7.5 1.7.5c1.6 0 2.8-1.2 2.8-2.8 0-2.2-1.9-4.2-4.5-4.2Z"/></svg></span>
+      <b>Paw &amp; Care<span>Grooming &amp; Penitipan — Contoh</span></b>
+    </a>
+    <nav class="hdr__nav" aria-label="Navigasi utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Booking</a>
+    </nav>
+    <a class="btn btn--toska" href="#" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+      Booking
+    </a>
+  </div>
+</header>
+
+<main id="atas">
+
+  <section class="hero">
+    <div class="hero__in">
+      <div>
+        <h1 class="reveal">Hewan kesayangan,<em>pulang wangi &amp; bahagia.</em></h1>
+        <p class="reveal">Grooming lembut oleh groomer berpengalaman, produk aman untuk kulit sensitif, dan penitipan yang nyaman seperti di rumah sendiri.</p>
+        <span class="badge-open" id="open-badge">Cek jam buka…</span>
+        <div class="hero__cta reveal">
+          <a class="btn btn--toska" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Booking via WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#layanan">Lihat layanan</a>
+        </div>
+      </div>
+      <figure class="hero__fig">
+        <img src="assets/ph-hero.jpg" alt="Anjing dan kucing yang baru di-grooming (foto contoh)" width="900" height="1200">
+        <figcaption class="hero__tag"><b>Buka 09.00 &ndash; 19.00</b><span>Setiap hari, dengan reservasi</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fakta" aria-label="Ringkasan pet grooming">
+    <ul>
+      <li>
+        <b>Groomer Berpengalaman</b>
+        <span>Terbiasa dengan anabul pemalu &amp; sensitif</span>
+      </li>
+      <li>
+        <b>Produk Aman</b>
+        <span>Hipoalergenik, tanpa bahan keras</span>
+      </li>
+      <li>
+        <b>Penitipan Nyaman</b>
+        <span>Kandang luas, dibersihkan berkala</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="layanan">
+    <div class="wrap">
+      <p class="eyebrow">Layanan</p>
+      <h2 class="h2">Layanan &amp; harga</h2>
+      <p class="lead" style="margin-bottom:2rem">Daftar di bawah ini contoh &mdash; akan diganti dengan layanan dan harga asli Anda.</p>
+
+      <div class="layanan">
+        <article class="kartu">
+          <h3>Grooming Kucing</h3>
+          <p>Mandi, blow dry, potong kuku, bersihkan telinga, dan cukur higienis.</p>
+          <span class="kartu__harga">Mulai Rp 90.000</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+        <article class="kartu">
+          <h3>Grooming Anjing Kecil</h3>
+          <p>Untuk anjing hingga 10 kg. Lengkap dengan parfum dan pita.</p>
+          <span class="kartu__harga">Mulai Rp 120.000</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+        <article class="kartu">
+          <h3>Grooming Anjing Besar</h3>
+          <p>Untuk anjing di atas 10 kg. Penanganan ekstra sabar.</p>
+          <span class="kartu__harga">Mulai Rp 180.000</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+        <article class="kartu">
+          <h3>Mandi &amp; Blow Dry</h3>
+          <p>Mandi dengan sampo sesuai jenis bulu, tanpa cukur.</p>
+          <span class="kartu__harga">Mulai Rp 70.000</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+        <article class="kartu">
+          <h3>Penitipan Harian</h3>
+          <p>Titip harian dengan makan, jalan pagi, dan main time.</p>
+          <span class="kartu__harga">Rp 100.000 / hari</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+        <article class="kartu">
+          <h3>Antar-Jemput Anabul</h3>
+          <p>Layanan penjemputan dalam radius 5 km dari lokasi.</p>
+          <span class="kartu__harga">Rp 30.000 / sekali jalan</span>
+          <a class="btn btn--ghost kartu__aksi" href="#" target="_blank" rel="noopener">Booking</a>
+        </article>
+      </div>
+
+      <ul class="fasilitas">
+        <li><div><b>Ruang Grooming Kaca</b><span>Anda bisa melihat prosesnya langsung</span></div></li>
+        <li><div><b>Area Main Terpisah</b><span>Anjing dan kucing tidak digabung</span></div></li>
+        <li><div><b>Laporan Foto</b><span>Update kondisi anabul lewat WhatsApp</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--mint tentang" id="tentang">
+    <div class="wrap tentang__in">
+      <figure>
+        <img src="assets/ph-about.jpg" alt="Groomer merawat hewan (foto contoh)" width="1000" height="750">
+      </figure>
+      <div>
+        <p class="eyebrow">Tentang</p>
+        <h2 class="h2">Dirawat seperti hewan sendiri.</h2>
+        <p class="lead">Paw &amp; Care adalah pet grooming contoh. Kami percaya setiap anabul berhak diperlakukan dengan lembut, tanpa dipaksa, dan tanpa stres berlebih.</p>
+        <p class="lead">Groomer kami terlatih membaca bahasa tubuh hewan sehingga proses berjalan aman dan nyaman.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeri">
+    <div class="wrap">
+      <p class="eyebrow">Galeri</p>
+      <h2 class="h2">Momen manis</h2>
+      <p class="lead" style="margin-bottom:2rem">Foto contoh (placeholder) &mdash; bukan foto usaha mana pun.</p>
+      <div class="galeri">
+        <figure><img src="assets/ph-g1.jpg" alt="Kucing setelah grooming (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g2.jpg" alt="Anjing kecil dimandikan (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g3.jpg" alt="Groomer menyisir bulu (foto contoh)" loading="lazy"></figure>
+        <figure><img src="assets/ph-g4.jpg" alt="Ruang penitipan (foto contoh)" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--mint lokasi" id="lokasi">
+    <div class="wrap lokasi__in">
+      <div>
+        <p class="eyebrow">Booking &amp; kunjungi</p>
+        <h2 class="h2">Lokasi Anda di sini.</h2>
+        <p class="lead">Teks lokasi contoh &mdash; akan diganti dengan alamat asli Anda.</p>
+
+        <dl>
+          <div>
+            <dt>Alamat</dt>
+            <dd>Alamat contoh<br>Jl. Contoh No. 00, Jakarta<br>Indonesia</dd>
+          </div>
+          <div>
+            <dt>Telepon &amp; WhatsApp</dt>
+            <dd><a href="#">+62 8xx-xxxx-xxxx</a></dd>
+          </div>
+          <div>
+            <dt>Jam buka</dt>
+            <dd>
+              <div class="jam">
+                <div><span>Senin&ndash;Jumat</span><span>09.00&ndash;19.00</span></div>
+                <div><span>Sabtu&ndash;Minggu</span><span>09.00&ndash;17.00</span></div>
+              </div>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="pesan" id="pesan-form">
+  <div class="pesan__grid pesan__grid--2">
+    <label>Nama<input type="text" name="nama" placeholder="Nama Anda" required></label>
+    <label>Pilih layanan<select name="layanan" required><option value="">-- pilih --</option><option>Grooming Kucing</option><option>Grooming Anjing Kecil</option><option>Grooming Anjing Besar</option><option>Mandi &amp; Blow Dry</option><option>Penitipan Harian</option><option>Antar-Jemput Anabul</option></select></label>
+  </div>
+  <div class="pesan__grid pesan__grid--3">
+    <label>Tanggal<input type="date" name="tanggal" required></label>
+    <label>Jam<input type="time" name="jam" required></label>
+    <label>Catatan (opsional)<input type="text" name="catatan" placeholder="cth: request khusus"></label>
+  </div>
+  <div class="pesan__actions"><button class="btn btn--toska" type="submit">Buat pesan WhatsApp</button></div>
+  <div class="pesan__preview" id="pesan-preview">
+    <p id="pesan-text" style="margin:0"></p>
+    <a class="btn btn--toska" id="pesan-wa-link" href="#" target="_blank" rel="noopener" style="display:none">Buka di WhatsApp</a>
+  </div>
+</form>
+
+        <div style="margin-top:1.75rem">
+          <a class="btn btn--toska" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+            Booking sekarang
+          </a>
+        </div>
+      </div>
+
+      <div class="peta" role="img" aria-label="Peta lokasi (contoh)">Peta lokasi (contoh)</div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:clamp(2.5rem,6vw,4rem)">
+    <div class="draf">
+      <b>Catatan: ini contoh tampilan (mockup).</b><br>
+      Semua konten di halaman ini adalah placeholder: nama usaha, alamat, kontak, foto, dan harga. Tidak ada afiliasi dengan usaha mana pun. Halaman ini siap disesuaikan dengan data asli Anda.
+    </div>
+  </div>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <div class="ftr__brand">
+      <b>Paw &amp; Care</b>
+      <p>Contoh tampilan website pet grooming. Bukan usaha nyata.</p>
+    </div>
+    <div>
+      <h3>Kontak</h3>
+      <ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">+62 8xx-xxxx-xxxx</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#lokasi">Booking</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr__bawah">
+    <span>&copy; 2026 Paw &amp; Care (contoh)</span>
+    <span>Website oleh Ibrahim Nurjasman Nugroho</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Hubungi lewat WhatsApp (contoh)">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.05-2.5c.28-.3.6-.38.8-.38l.58.01c.19 0 .43-.07.68.52.25.6.86 2.07.94 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+</a>
+
+<div class="cta-bar" aria-label="Aksi cepat">
+  <a class="btn btn--toska" href="#lokasi">Booking</a>
+  <a class="btn btn--bar-ghost" href="#">WhatsApp</a>
+</div>
+
+<script>
+function demoNotice(){alert('Ini halaman demo. Tombol ini akan terhubung ke WhatsApp / tautan resmi usaha Anda.');}
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href="#"]');
+  if(a){ e.preventDefault(); demoNotice(); }
+});
+</script>
+
+<script>
+(function(){
+  var CFG = {name: "Paw & Care", hours: [[9,17],[9,19],[9,19],[9,19],[9,19],[9,19],[9,17]]};
+  function updateBadge(){
+    var el = document.getElementById('open-badge');
+    if(!el) return;
+    var now = new Date();
+    var r = CFG.hours[now.getDay()];
+    var h = now.getHours() + now.getMinutes() / 60;
+    var open = !!(r && h >= r[0] && h < r[1]);
+    el.textContent = open ? 'Buka sekarang' : 'Sedang tutup';
+    el.classList.toggle('is-closed', !open);
+  }
+  updateBadge(); setInterval(updateBadge, 60000);
+
+  var form = document.getElementById('pesan-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      function g(n){ var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; }
+      var nama = g('nama'), layanan = g('layanan'), tanggal = g('tanggal'), jam = g('jam'), catatan = g('catatan');
+      
+      var msg = 'Halo ' + CFG.name + '!\n\nSaya ' + nama + '.\nIngin booking: ' + layanan + '\nTanggal: ' + tanggal + '\nJam: ' + jam;
+      if(catatan){ msg += '\nCatatan: ' + catatan; }
+      msg += '\n\nTerima kasih.';
+      var box = document.getElementById('pesan-preview');
+      document.getElementById('pesan-text').textContent = msg + '\n\n(Demo: tombol di bawah mensimulasikan alur asli. Saat live, pesan langsung mengarah ke WhatsApp resmi usaha Anda.)';
+      var wa = document.getElementById('pesan-wa-link');
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      wa.style.display = 'inline-flex';
+      box.classList.add('show');
+      box.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+})();
+</script>
+</body>
+</html>
