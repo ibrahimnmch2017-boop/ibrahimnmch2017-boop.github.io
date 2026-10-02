@@ -640,6 +640,20 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .pesan__preview .btn{margin-top:.85rem}
 .pesan__actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
 
+
+/* Keep the location controls and contact action inside narrow screens. */
+.header-actions { display:flex; align-items:center; gap:0.75rem; min-width:0; }
+@media (max-width:600px) {
+  .hdr__in { flex-wrap:wrap; gap:0.75rem; }
+  .hdr__in > .brand { width:100%; }
+  .header-actions { width:100%; justify-content:space-between; }
+  .branch-pill { min-width:0; font-size:0.75rem; }
+  .branch-pill button { padding:0.4rem 0.6rem; }
+}
+@media (max-width:360px) {
+  .header-actions { flex-wrap:wrap; }
+}
+
 </style>
 </head>
 <body>
@@ -666,7 +680,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
     </nav>
 
     <!-- Branch Selector Langsung di Header -->
-    <div style="display:flex; align-items:center; gap:0.75rem;">
+    <div class="header-actions">
       <div class="branch-pill" aria-label="Pilih Cabang Utama">
         <button type="button" id="pill-kj" class="active" onclick="switchBranch('kj')">Jakarta Barat</button>
         <button type="button" id="pill-pi" onclick="switchBranch('pi')">Jakarta Selatan</button>

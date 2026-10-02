@@ -1,68 +1,34 @@
-# Design
+# Portfolio design and content conventions
 
-<!-- impeccable:design-schema 1 -->
+## Purpose
 
-## Surfaces
+Present Ibrahim Nurjasman Nugroho for developer opportunities through concise project case studies and seven working front-end concept websites.
 
-- `demo-site/index.html` — hub portofolio (Experience/Persuade) menautkan 7 demo.
-- `demo-site/<demo>/` — 7 template demo statis (sudah punya dunia visualnya masing-masing; jangan diseragamkan dari hub).
+## Visual language
 
-## Platform
+- Preserve the navy canvas, cyan accents, readable pale text, and existing demo screenshots.
+- Use Bricolage Grotesque for headings and Spline Sans for body text, with system-font fallbacks.
+- Keep application case studies distinct from business website demos: case studies use the real UI (a screenshot or a labelled presentation-only reconstruction with synthetic sample data), while the business gallery uses actual screenshots and working demo links.
+- Put the UI preview first in each project card (natural aspect ratio, no crop), then title, purpose, and stack. A fixed contain box is used only for the compact extension popup.
+- Case studies show a large primary preview near the top with a full-size link, and supporting images only when they show a distinct interaction.
+- Preserve the individual palette and interface of each business demo.
+- Keep keyboard focus visible, headings structured, mobile layouts readable, and motion optional.
 
-web
+## Content conventions
 
-## Scene
+- English and Indonesian text are included, with a language switch and an English default. The language preference can persist locally; content still renders in English with JavaScript disabled.
+- Developer work leads the page. The accounting/audit background provides context rather than implying developer employment at KPU RI.
+- Application previews are either a real screenshot or a faithful reconstruction with synthetic sample data, and each is labelled as such in its caption. Reconstructions are rendered in an isolated harness; the real application is not started and no portal is contacted.
+- Do not include application source, internal working papers, private portal URLs, login information, or the older SPIP participation figures.
+- The 564 work-unit scope applies only to the confirmed Google Apps Script SPIP maturity working-paper workflow, dashboard, and compilation.
+- IELTS practice feedback is not an official score. Blur WhatsApp retains only messages observed before deletion.
+- Do not claim accessibility certification, performance benchmarks, guaranteed exam results, or elimination of all reporting errors without evidence.
+- All businesses, prices, images, and reviews in the seven website demos remain fictional examples.
 
-Pemilik UMKM Indonesia membuka dari bio/link Instagram, mayoritas di HP, sering malam hari. Butuh bukti cepat bahwa website seperti ini bisa dimiliki bisnisnya; dinding navy gelap membuat screenshot demo yang terang menyala seperti lampu di ruang pamer.
+## Deployment
 
-## Palette
+The repository is a user site named `ibrahimnmch2017-boop.github.io`, published at https://ibrahimnmch2017-boop.github.io/. Project case studies live under `/projects/` and business demos retain their existing paths.
 
-- Navy canvas: `#0C1930` (var `--bg`)
-- Panel kontak: `#101F3A` (var `--panel`)
-- Kartu: `#13243F` (var `--card`)
-- Ink text: `#EAF1F8`, muted: `#9CB0C9`
-- Cyan aksen: `#35BBD0` (var `--teal`), deep: `#0E7C93` — turunan token brand CV
-- Garis: `rgba(234,241,248,.12)` / `rgba(234,241,248,.22)`
+## Preview validation
 
-Ketiga warna pertama adalah token brand CV Ibrahim yang diperluas ke permukaan gelap.
-
-## Type
-
-- Display: Bricolage Grotesque (700) — headline hero, H2, nama kartu.
-- Body: Spline Sans (400–700).
-- Skala: 0.75rem (meta/catatan) · 1rem (body) · 1.5rem (nama kartu) · clamp() untuk H2/H1 (maks 4.05rem). Rasio antar langkah ≥1.3.
-
-## Komponen
-
-- `.btn--primary` (cyan solid) = aksi utama (WhatsApp); `.btn--ghost` = sekunder.
-- `.card__link` — screenshot 16/10 `object-position:top` di frame 1px rgba, hover: lift −4px + border menguat + gambar scale 1.025.
-- `.card__meta` — kategori kiri, nomor katalog 01–07 kanan (tabular-nums, cyan).
-- `.stack` — tumpukan 3 screenshot bersudut (−1.6°, +2.6°, −5°) di hero desktop; di mobile hanya kartu depan.
-
-## Motion
-
-Satu gerakan terkoreografi: kartu katalog fade-up 18px dengan stagger `--d` per kartu (IntersectionObserver, `rootMargin -8%`), easing `cubic-bezier(.16,1,.3,1)`. Semua dimatikan di `prefers-reduced-motion`.
-
-## Browser Surfaces
-
-- Selection: cyan bg + navy ink. Scrollbar: thumb `#2A4364` di track `--bg`. Focus ring: 3px cyan.
-- Font smoothing aktif; `scrollbar-color` Firefox diset.
-
-## Catatan Review (finish review − 2026-09-19)
-
-- Detector `impeccable detect.mjs` → **0 temuan** (cramped padding & flat hierarchy sudah diperbaiki).
-- Terverifikasi: 7 link demo resolve; semua link eksternal (WA/LinkedIn/GitHub) valid; `vw=512 scrollW=512` (tidak ada overflow horizontal di viewport 390–512); screenshot desktop & mobile diperiksa; kontrak arah tertanam sebagai komentar HTML pertama di `<body>`.
-- Catatan jujur: Chrome headless Windows tidak bisa viewport <512px lewat `--window-size`; mobile diverifikasi via iframe 390px (frame render bersih).
-
-## Aturan yang Harus Dipertahankan
-
-1. Hub tetap gelap navy; demo tetap punya palet masing-masing. Jangan menyatukan.
-2. Semua konten demo fiktif; disclaimer wajib terlihat di hub dan tetap ada di setiap demo.
-3. Kartu katalog selalu screenshot nyata (diregenerasi via `build_demo_site.py`), bukan mockup kartu.
-4. Bahasa Indonesia untuk hub.
-
-## Deploy
-
-- `demo-site/` di-push ke GitHub (repo publik) → Settings → Pages → deploy dari root branch `main`.
-- URL final: `https://ibrahimnmch2017-boop.github.io/<nama-repo>/`
-- Setelah deploy, pasang URL di bio Instagram.
+Browser verification results are kept in the local CV/revised/github-review folder outside the public website repository. The portfolio source in this repository contains only public-facing pages and assets.

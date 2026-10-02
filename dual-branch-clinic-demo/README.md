@@ -25,7 +25,7 @@ Banyak klinik estetika menghadapi friksi konversi yang sama pada kehadiran digit
 
 1. **Digital Interactive Treatment Catalog**:
    - Merangkum seluruh dokumen PDF ke dalam sistem tab interaktif (*Medi-Facial*, *Lymphatic & Body*, *Expertise Dokter*, *Medical Camo*, dan *Promo*).
-   - Tampilan bersih, elegan, dan bisa diakses dalam hitungan milidetik tanpa perlu download aplikasi atau dokumen.
+   - Tampilan bersih, elegan, dan bisa dibuka di browser tanpa perlu mengunduh aplikasi atau dokumen.
 
 2. **Interactive Dual-Branch Switcher**:
    - Pasien cukup memilih tombol pill cabang di bagian atas (**Jakarta Barat** atau **Jakarta Selatan**).
@@ -39,16 +39,16 @@ Banyak klinik estetika menghadapi friksi konversi yang sama pada kehadiran digit
 ## 🛠️ Karakter Teknis
 
 - **Zero Framework**: Vanilla HTML5 + custom CSS tokens (tanpa React/Vue/Tailwind).
-- **Aksesibilitas**: kontras WCAG-compliant, semantic landmarks, keyboard-friendly.
+- **Aksesibilitas**: desain dengan perhatian pada kontras, semantic landmarks, dan navigasi keyboard; belum ada audit aksesibilitas lengkap.
 - **Responsif**: layout fluid dari mobile (390px) hingga desktop lebar.
-- **Self-contained**: tanpa dependensi CDN eksternal untuk CSS/JS.
+- **CSS/JS lokal**: kode antarmuka lokal; font menggunakan Google Fonts dengan fallback font sistem.
 
 ---
 
 ## 📂 Struktur Proyek
 
 ```
-aesthetic-skin-club-demo/
+dual-branch-clinic-demo/
 ├── index.html   # Single-page layout lengkap (semantic HTML + CSS tokens + vanilla JS)
 └── README.md    # Dokumentasi ini
 ```
@@ -67,4 +67,4 @@ open index.html    # macOS
 
 ## 📄 Lisensi
 
-MIT License. Dibuat sebagai showcase desain & engineering.
+Dibuat sebagai showcase desain dan pengembangan. File lisensi belum tersedia di repository ini.
